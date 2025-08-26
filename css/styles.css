@@ -563,11 +563,17 @@ footer {
 }
 
 #corpo-texto-historia{
-  font-family: 'pentagram';
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.15em;
   font-weight: 500;
   text-align: justify;
   width: 90%;
+}
+
+@media (max-width: 680px){
+  #widget-instagram{
+    display: none!important;
+  }
 }
 /* CSS HEX 
 --gold-metallic: #E1BD56ff;
