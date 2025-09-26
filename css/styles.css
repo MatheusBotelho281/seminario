@@ -43,16 +43,17 @@ body {
   color: rgb(180, 57, 57);
 }
 
-#brasao-logo{
+#brasao-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
 
-#brasao-logo img{
+#brasao-logo img {
   height: 1.5em;
 }
+
 #mini-menu {
   display: flex;
   align-items: center;
@@ -141,11 +142,11 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-#titulo-menu-mobile{
+#titulo-menu-mobile {
   font-size: 1em;
 }
 
-#li-menu-mobile a{
+#li-menu-mobile a {
   font-size: 1em;
   text-decoration: none;
   color: white;
@@ -153,41 +154,51 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  #menu-principal{
+  #menu-principal {
     display: none;
   }
+
   #banner {
-    display: none!important;
+    display: none !important;
   }
-  #mini-menu{
+
+  #mini-menu {
     font-size: 0.7em;
   }
-  #logo{
+
+  #logo {
     display: flex;
     flex-direction: column;
   }
-  #logo img{
+
+  #logo img {
     margin-top: 0.4em;
     height: 8em;
   }
-  #logo h1{
+
+  #logo h1 {
     font-size: 1.5em;
     margin-bottom: 2em;
   }
-  #divisoria-mobile{
+
+  #divisoria-mobile {
     display: block;
   }
-  #brasao-logo img{
+
+  #brasao-logo img {
     height: 1em;
-    margin: 0!important;
+    margin: 0 !important;
   }
-  #brasao-logo a{
+
+  #brasao-logo a {
     font-size: 0.9em;
   }
-  header{
+
+  header {
     overflow: hidden;
   }
 }
+
 #menu {
   display: flex;
   justify-content: center;
@@ -242,7 +253,7 @@ body {
 
 #conteudo-geral {
   display: flex;
-  flex-direction: column!important;
+  flex-direction: column !important;
 }
 
 #feed-noticias {
@@ -390,7 +401,7 @@ body {
   background-color: #922C2Cff;
   color: white;
   padding: 0;
-  margin: 0!important;
+  margin: 0 !important;
 }
 
 footer {
@@ -399,7 +410,9 @@ footer {
 
 /* Media Queries para Responsividade */
 
-@media (max-width: 1024px) { /* Para tablets */
+@media (max-width: 1024px) {
+
+  /* Para tablets */
   #menu-principal ul {
     flex-direction: column;
   }
@@ -434,7 +447,9 @@ footer {
   }
 }
 
-@media (max-width: 768px) { /* Para dispositivos móveis */
+@media (max-width: 768px) {
+
+  /* Para dispositivos móveis */
   #header-container {
     background-size: cover;
   }
@@ -474,7 +489,9 @@ footer {
   }
 }
 
-@media (max-width: 480px) { /* Para telas muito pequenas, como smartphones */
+@media (max-width: 480px) {
+
+  /* Para telas muito pequenas, como smartphones */
   #footer-seminario {
     flex-direction: column;
     align-items: flex-start;
@@ -523,7 +540,7 @@ footer {
 
 /*Abaixo CSS da página História*/
 
-#corpo-texto{
+#corpo-texto {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -531,23 +548,27 @@ footer {
   width: 75%;
   margin: 0 auto;
 }
-#titulo-historia{
+
+#titulo-historia {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-top: 2em;
 }
-#titulo-historia h1{
+
+#titulo-historia h1 {
   color: #922C2Cff;
   font-size: 2em;
   margin: 0 0.5em;
   font-family: 'pentagram';
 }
-#texto-historia img{
+
+#texto-historia img {
   height: 15em;
 }
-#texto-historia{
+
+#texto-historia {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -556,13 +577,13 @@ footer {
   margin-top: 2em;
 }
 
-#titulo-texto-historia{
+#titulo-texto-historia {
   font-size: 1.6em;
   font-family: 'pentagram';
   color: #922C2Cff;
 }
 
-#corpo-texto-historia{
+#corpo-texto-historia {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.15em;
   font-weight: 500;
@@ -570,12 +591,125 @@ footer {
   width: 90%;
 }
 
-@media (max-width: 680px){
-  #widget-instagram{
-    display: none!important;
+@media (max-width: 680px) {
+  #widget-instagram {
+    display: none !important;
   }
 }
 
+
+@media (max-width: 680px){
+  #corpo-principal{
+    font-size: 1em;
+    width: 95%!important;
+    height: auto!important;
+  }
+  #email-matricula2026{
+    font-size: 0.52em!important;
+    opacity: 100%!important;
+  }
+  #titulo-documento-listagem{
+    font-size: 1.3em!important;
+  }
+}
+#matricula2026 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#titulo-matricula2026 {
+  font-family: "pentagram";
+  font-size: 2.3em;
+  color: #354ea0ff;
+  text-align: center;
+}
+
+#arquivos-matricula2026-ul {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#documento-listagem a {
+  color: #354ea0ff;
+  font-size: 1.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+#documento-listagem {
+  margin-top: 0.3em;
+}
+
+#documento-listagem a:hover {
+  opacity: 45%;
+}
+
+#titulo-documento-listagem {
+  font-family: "pentagram";
+  font-size: 2.1em;
+}
+
+#informacoes-matricula2026 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#informacoes-matricula2026-ul {
+  list-style: none;
+}
+
+#informacoes-matricula2026-li {
+  font-family: "pentagram";
+  font-size: 1.2em;
+  margin-top: 0.8em;
+}
+
+#email-matricula2026 {
+  font-family: "pentagram";
+  font-style: italic;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#email-matricula2026 h1 {
+  opacity: 60%;
+}
+
+#email-matricula2026 a {
+  text-decoration: none;
+  font-family: "pentagram";
+  font-size: 2em;
+  opacity: 60%;
+  transition: all 0.3s ease-in-out;
+  color: #354ea0ff;
+}
+
+#email-matricula2026 a:hover {
+  opacity: 200% !important;
+}
+
+#corpo-principal {
+  margin-top: -2em;
+  margin-bottom: -5em;
+  padding-bottom: 2em;
+  background-image: url('../media/seminario-p&b.webp');
+  height: 100%;
+}
+
+#informacoes-matricula2026-li strong {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 /* CSS HEX 
 --gold-metallic: #E1BD56ff;
