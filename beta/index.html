@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seminário N.Sª do Amor Divino</title>
+    <link rel="icon" href="./media/brasao-seminario.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="./js/scripts.js" defer></script>
+    <script src="./js/menu.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menus = [
+          { dropdown: "semi-dropdown", submenu: "submenu-seminario" },
+          { dropdown: "educ-dropdown", submenu: "submenu-educandario" },
+          { dropdown: "voc-dropdown", submenu: "submenu-vocacao" },
+        ];
+
+        menus.forEach(({ dropdown, submenu }) => {
+          const dropdownEl = document.getElementById(dropdown);
+          const submenuEl = document.getElementById(submenu);
+
+          // Garantindo que o submenu esteja oculto ao carregar a página
+          submenuEl.style.display = "none";
+
+          dropdownEl.addEventListener("mouseenter", () => {
+            submenuEl.style.display = "block";
+          });
+
+          dropdownEl.addEventListener("mouseleave", () => {
+            submenuEl.style.display = "none";
+          });
+        });
+      });
+    </script>
+    <style>
+      #menu-principal ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+      #menu-principal ul li {
+        position: relative;
+        padding: 10px;
+      }
+      .submenu {
+        z-index: 999;
+        display: none;
+        position: absolute;
+        background-color: #922c2cff;
+        top: 100%;
+        left: 0;
+        height: auto !important;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .submenu a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div id="header-container">
+        <div id="mini-menu">
+          <ul>
+            <li id="brasao-logo">
+              <img
+                style="margin-right: 0.6em"
+                src="./media/brasao-diocese.webp"
+                alt=""
+              /><a href="https://diocesepetropolis.com.br/"
+                >Diocese de Petrópolis</a
+              >
+            </li>
+            <li id="brasao-logo">
+              <img
+                style="height: 2.3em !important"
+                src="./media/brasao-arqui.webp"
+                alt=""
+              /><a href="https://arqnit.org.br/portal/"
+                >Arquidiocese de Niterói</a
+              >
+            </li>
+            <li style="margin-left: -0.3em" id="brasao-logo">
+              <img
+                style="margin-right: -0.7em"
+                src="./media/logo-cnbb.webp"
+                alt=""
+              /><a href="https://www.cnbb.org.br/">CNBB</a>
+            </li>
+          </ul>
+          <div id="redes-sociais">
+            <a href="https://www.instagram.com/seminarioamordivino/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/pascomseminario/?locale=pt_BR"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+        <div id="linha"></div>
+        <div>
+          <a id="logo" href="./index.html">
+            <img src="./media/brasao-seminario.webp" alt="Brasão do Seminário" />
+            <h1>
+              Seminário Diocesano<br />
+              Nossa Senhora do Amor Divino
+            </h1>
+          </a>
+        </div>
+        <!DOCTYPE html>
+        <html lang="pt-br">
+          <head>
+            <meta charset="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <title>Menu Responsivo</title>
+            <style>
+              /* Estilos básicos para o menu */
+              .hidden {
+                display: none !important;
+              }
+
+              /* Estilo opcional para o botão */
+              #menu-btn {
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+                background: none;
+                border: none;
+              }
+
+              /* Estilo básico do menu (você pode customizar) */
+              #menu-mobile {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+              }
+
+              #menu-mobile ul {
+                list-style-type: none;
+                padding: 0;
+              }
+
+              #menu-mobile li {
+                margin: 10px 0;
+              }
+            </style>
+          </head>
+          <header>
+            <!-- mini menu e logos -->
+            <div id="mini-menu"> ... </div>
+            
+            <!-- Aqui o menu será carregado -->
+            <div id="menu-placeholder"></div>
+          </header>
+
+        <div id="menu-principal">
+          <nav>
+            <ul id="menu">
+              <li id="semi-dropdown">
+                <a href="#">Seminário <span>&#9660;</span></a>
+                <ul id="submenu-seminario" class="submenu">
+                  <li><a href="./historia.html">História</a></li>
+                  <li><a href="#">Formação</a></li>
+                </ul>
+              </li>
+              <li id="educ-dropdown">
+                <a href="/educandario.html">Educandário <span>&#9660;</span></a>
+                <ul id="submenu-educandario" class="submenu">
+                  <li><a href="#">Projeto</a></li>
+                  <li>
+                    <a
+                      href="./media/2026 - Formulário de Requerimento de Matrícula.pdf"
+                      >Requerimento de Matrícula</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./media/Edital_Educandário_Seminario_Bolsa 2026.pdf"
+                      >Regras sobre a Bolsa de Estudos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./media/Formulario_avaliação_socioeconomica_Educandário_2026.pdf"
+                      >Formulário de Bolsa</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li id="voc-dropdown">
+                <a href="#">Vocação <span>&#9660;</span></a>
+                <ul id="submenu-vocacao" class="submenu">
+                  <li><a href="#">Discernimento</a></li>
+                  <li><a href="#">Contato Pastoral Vocacional </a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contato</a></li>
+              <li><a href="#">Notícias</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="conteudo-geral">
+        <div id="banner">
+          <div id="insta-viewer"></div>
+          <div id="noticias-banner">
+            <div id="carrosel-noticias" style="display: none;">
+              <div class="carrossel-container">
+                <img src="./media/site_em_construcao.jpg" alt="" />
+                <img src="./media/site_em_construcao.jpg" alt="" />
+                <img src="./media/site_em_construcao.jpg" alt="" />
+              </div>
+              <div class="botoes">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="banner-matricula">
+          <a
+            href="./educandario.html"
+            ><img
+              src="./media/matricula-1.png"
+              alt="Banner Matrícula 2026"
+          /></a>
+          <a href="./educandario.html"><img
+            src="./media/matricula-2.png"
+            alt="Banner Matrícula 2026"
+        /></a>
+        </div>
+        <!--
+          <div id="content">
+            <div id="feed-noticias">
+              <div id="titulo-noticias">
+                <h1>Notícias</h1>
+                <div id="linha-noticias"></div>
+              </div>
+              <div id="feed-de-noticias">
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+
+                <div id="noticia">
+            <a>
+              <img src="./media/foto-seminario.webp" alt="" />
+            </a>
+            <a id="noticia-link">
+              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam quidem, voluptates, quod, quos quas quae quia
+              quibusdam consequuntur, doloribus voluptate quia quibusdam
+              consequuntur, doloribus voluptate.
+            </p>
+            <a id="leia-mais" href="#">Leia mais</a>
+                </div>
+              </div>
+            </div>
+          </div>
+              </div>
+        -->
+
+      <!-- Ainda em construção, será um widget do Insta estilizado -->
+      <div
+        id="widget-instagram"
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 5rem;
+          background-color: #922c2cff;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        "
+      >
+        <div
+          id="titulo-instagram"
+          style="text-align: center; margin-bottom: 1.5rem"
+        >
+          <h1 style="color: white; font-size: 2rem; margin: 0">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </h1>
+          <div
+            style="
+              width: 80px;
+              height: 4px;
+              background: white;
+              margin: 0.5rem auto 0 auto;
+              border-radius: 2px;
+            "
+          ></div>
+        </div>
+
+        <!-- LightWidget WIDGET -->
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe
+          src="//lightwidget.com/widgets/40d1505f06365bc5a33f8990b1eeb8e9.html"
+          scrolling="no"
+          allowtransparency="true"
+          class="lightwidget-widget"
+          style="width: 60%; border: 0; overflow: hidden"
+        ></iframe>
+      </div>
+    </main>
+
+    <footer>
+      <div id="footer-seminario">
+        <div id="footer-logo">
+          <img src="./media/brasao-seminario.webp" alt="Brasão do Seminário" />
+          <h1>
+            Seminário Diocesano<br />
+            Nossa Senhora do Amor Divino
+          </h1>
+        </div>
+        <div id="footer-menu">
+          <h1>Contatos</h1>
+          <ul>
+            <h2 style="font-size: 1em">
+              Estrada União e Indústria, 3441 – Corrêas 25720-110 – Petrópolis,
+              RJ
+            </h2>
+            <li>Telefone: (24) 2221-2187 / (24) 2221-1459</li>
+            <li>
+              <a style="text-decoration: none; color: white">
+                E-mail: admin@seminario.com.br / contato@seminario.com.br
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p id="copyright">&copy; 2025 Seminário. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
