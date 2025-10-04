@@ -234,6 +234,29 @@ body {
   height: auto;
 }
 
+#banner-matricula{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  color: white;
+  font-family: 'pentagram';
+  font-size: 1.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+#banner-matricula img{
+  color: white;
+  text-decoration: none;
+  margin-left: 0.5em;
+  transition: all ease-in-out 0.2s;
+  height: 20em;
+  width: auto;
+}
+#banner-matricula img:hover{
+  filter: brightness(0.9);
+  cursor: pointer;
+}
 .botoes {
   position: absolute;
   top: 50%;
@@ -253,6 +276,7 @@ body {
 
 #conteudo-geral {
   display: flex;
+  align-items: center;
   flex-direction: column !important;
 }
 
