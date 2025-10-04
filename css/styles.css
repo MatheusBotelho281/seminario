@@ -233,6 +233,18 @@ body {
   width: 75em;
   height: auto;
 }
+@media (max-width: 1024px){
+  #banner-matricula{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #banner-matricula a img{
+    height: 15em;
+    width: auto;
+  }
+}
 
 #banner-matricula{
   display: flex;
@@ -638,7 +650,7 @@ footer {
   font-size: clamp(1.6em, 4vw, 2.3em); /* ajusta de acordo com a tela */
   color: #354ea0ff;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.3em;
 }
 
 #arquivos-matricula2026-ul {
@@ -719,7 +731,7 @@ footer {
   text-decoration: none;
   font-family: "pentagram", sans-serif;
   font-size: clamp(1.2em, 3vw, 2em);
-  opacity: 0.6;
+  opacity: 0.8;
   transition: all 0.3s ease-in-out;
   color: #354ea0ff;
 }
@@ -748,6 +760,15 @@ footer {
 
   #arquivos-matricula2026-ul {
     align-items: center;
+    text-align: center;
+  }
+  #email-matricula2026{
+    text-align: center;
+  }
+  #matricula2026{
+    justify-content: start;
+    height: auto;
+    min-height: 0px;
   }
 }
 
@@ -758,11 +779,14 @@ footer {
   }
 
   #documento-listagem a {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   #email-matricula2026 a {
     font-size: 1.5em;
+  }
+  #email-matricula2026 h1{
+    font-size: 1.3em;
   }
 }
 
