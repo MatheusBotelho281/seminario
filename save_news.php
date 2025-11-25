@@ -43,7 +43,9 @@ if (empty($new_news_item) || !isset($new_news_item['slug'])) {
     echo json_encode(['success' => false, 'message' => 'Dados inválidos recebidos. Verifique se o slug foi gerado.']);
     exit;
 }
+$new_news_item['status'] = 'published'; // <--- ADICIONE ESTA LINHA PARA DEFINIR O STATUS PADRÃO
 
+array_unshift($news_array, $new_news_item);
 // 4. Carrega as notícias existentes
 if (file_exists($json_file)) {
     // Tenta carregar o conteúdo, se falhar, assume um array vazio
@@ -63,13 +65,13 @@ array_unshift($news_array, $new_news_item);
 // 6. Salva o array de volta no arquivo JSON
 // OTIMIZAÇÃO: JSON_PRETTY_PRINT (formatação legível) e JSON_UNESCAPED_UNICODE (acentos)
 $result = file_put_contents(
-    $json_file, 
+    $json_file,
     json_encode($news_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
 );
 
 if ($result !== false) {
     // CORRIGIDO: 201 Created é o código correto para criação de recurso
-    http_response_code(201); 
+    http_response_code(201);
     echo json_encode(['success' => true, 'message' => 'Notícia salva com sucesso!', 'file' => $json_file]);
 } else {
     http_response_code(500);
