@@ -1,3 +1,12 @@
+<?php
+session_start();
+// Verifica se a variável de sessão 'loggedin' não está definida ou não é true
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.html');
+    exit;
+}
+// Se a sessão for válida, o script continua e o HTML é exibido
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>

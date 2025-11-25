@@ -4,6 +4,19 @@ header('Access-Control-Allow-Origin: *'); // Mantenha isso para testes, mas prot
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
+session_start();
+// ESTE BLOCO DE CÓDIGO DEVE SER O PRIMEIRO NO ARQUIVO!
+
+// Proteção de login: Se não estiver logado, encerra a execução com erro 403 (Acesso Proibido)
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'message' => 'Acesso não autorizado. Por favor, faça login.']);
+    exit;
+}
+
+// O restante do seu script PHP (headers, verificação POST, file_put_contents...) continua abaixo.
+
+header('Content-Type: application/json');
 // 1. Define o caminho do arquivo JSON
 // ASSEGURE-SE de que a pasta 'data/' existe e tem permissão de escrita (CHMOD 777)
 $json_file = 'data/noticias.json';
