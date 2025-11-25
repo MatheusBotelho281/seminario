@@ -930,7 +930,7 @@ footer {
 
 /*Notícias e Artigos*/
 
-#artigo-container{
+#artigo-container {
   display: flex;
   align-items: start;
   justify-content: start;
@@ -940,7 +940,8 @@ footer {
   margin: 0;
   margin-top: -2rem;
 }
-#artigo-header{
+
+#artigo-header {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -951,20 +952,23 @@ footer {
   margin-bottom: 1em;
   background-image: url(../media/seimnario-fundo-educandario.webp);
 }
-#artigo-titulo{
+
+#artigo-titulo {
   font-family: 'pentagram', serif;
   font-size: 2.5em;
   color: #922C2Cff;
   margin-left: 1rem;
 }
-#artigo-subtitulo{
+
+#artigo-resumo {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2em;
   color: gray;
   margin-left: 1rem;
   margin-right: 50rem;
 }
-#artigo-conteudo{
+
+#artigo-conteudo {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -974,8 +978,324 @@ footer {
   margin: 0;
   padding-top: 2rem;
   padding-left: 2rem;
-  margin-bottom: 5rem;
 }
+
+#artigo-conteudo p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+#artigo-imagem {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 75%;
+  margin-left: 2rem;
+}
+
+#artigo-imagem img {
+  width: 25rem;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.3em;
+}
+
+/* --- Estilos da Seção de Notícias (index.html) --- */
+
+#secao-noticias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 4rem 0;
+}
+
+/* Reutilizando o padrão de Título das Notícias/Evangelho */
+#titulo-noticias-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 75%;
+  /* Mesma largura das outras seções de conteúdo */
+  margin-bottom: 2rem;
+}
+
+#titulo-noticias-container h1 {
+  color: #922C2Cff;
+  /* Cor Auburn */
+  font-size: 1.7em;
+  margin: 0;
+  font-family: 'pentagram', serif;
+  white-space: nowrap;
+}
+
+#linha-noticias {
+  width: 100%;
+  height: 0.1em;
+  background-color: #922C2Cff;
+  margin-left: 1em;
+}
+
+/* Feed de Cards de Notícias */
+#feed-noticias {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 cards na desktop */
+  gap: 20px;
+}
+
+.card-noticia {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-noticia:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-noticia-imagem {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-noticia-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-noticia-conteudo {
+  padding: 1rem;
+  flex-grow: 1;
+  /* Garante que os conteúdos fiquem alinhados */
+}
+
+.card-noticia-conteudo h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: #922C2Cff;
+  margin-top: 0;
+  min-height: 40px;
+}
+
+.card-noticia-conteudo p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+#botao-mais-noticias {
+  margin-top: 2rem;
+}
+
+#botao-mais-noticias a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #922C2Cff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#botao-mais-noticias a:hover {
+  background-color: #E23135ff;
+}
+
+/* --- Estilos da Página de Artigo Único (noticia.html) --- */
+
+#artigo-container {
+  width: 75%;
+  /* Largura padrão de conteúdo no desktop */
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+#artigo-titulo {
+  font-family: 'pentagram', serif;
+  font-size: 2.5em;
+  color: #922C2Cff;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+#artigo-resumo {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #E1BD56ff;
+  /* Dourado */
+  text-align: center;
+}
+
+#artigo-imagem {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#artigo-imagem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#artigo-conteudo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.7;
+  text-align: justify;
+  width: 100%;
+  max-width: 800px;
+}
+
+#artigo-conteudo p {
+  margin-bottom: 1.5rem;
+}
+
+/* --- Mídia Queries para Responsividade --- */
+
+@media (max-width: 1024px) {
+
+  /* Lista de Notícias (index.html) */
+  #feed-noticias {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cards em tablets */
+    width: 90%;
+  }
+
+  #titulo-noticias-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Artigo Único (noticia.html) */
+  #artigo-container {
+    width: 95%;
+    /* Aumenta a largura em dispositivos menores */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #artigo-titulo {
+    font-size: 1.8em;
+  }
+
+  /* Lista de Notícias (index.html) */
+  #feed-noticias {
+    grid-template-columns: 1fr;
+    /* 1 card por linha em celulares */
+  }
+}
+
+/* --- Estilos do Painel de Administração (admin.html) --- */
+
+#admin-form-container {
+  width: 60%;
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#admin-form-container h1 {
+  font-family: 'pentagram', serif;
+  color: #922C2Cff;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #E1BD56ff;
+  /* Cor Dourada */
+  padding-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #922C2Cff;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background-color: #fcfcfc;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+#btn-publicar {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #922C2Cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+#btn-publicar:hover {
+  background-color: #E23135ff;
+  /* Cor Poppy */
+}
+
+/* Estilo para campos somente leitura (slug) */
+#slug {
+  background-color: #eee;
+  font-style: italic;
+  color: #666;
+}
+
+/* Responsividade Admin */
+@media (max-width: 768px) {
+  #admin-form-container {
+    width: 95%;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
 /* CSS HEX 
 --gold-metallic: #E1BD56ff;
 --poppy: #E23135ff;

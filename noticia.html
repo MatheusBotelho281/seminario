@@ -295,7 +295,7 @@
       <div id="artigo-container">
         <div id="artigo-header">
           <h1 id="artigo-titulo">Modelo de Notícia</h1>
-          <h2 id="artigo-subtitulo">
+          <h2 id="artigo-resumo">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At nostrum
             fuga culpa, iste ad veritatis. Maxime qui cupiditate deleniti,
             incidunt at amet temporibus dolores reiciendis omnis recusandae
@@ -356,4 +356,114 @@
       <p id="copyright">&copy; 2025 Seminário. Todos os direitos reservados.</p>
     </footer>
   </body>
+  <script>
+    // SIMULAÇÃO: Esta função simula o retorno de uma notícia completa pelo slug
+    async function fetchNewsBySlug(slug) {
+      // NO MUNDO REAL: fetch('URL_DO_SEU_CMS/noticias?slug=' + slug)
+      // Usamos os mesmos dados mockados do index para ter consistência
+      const mockNewsData = [
+        {
+          slug: "inauguracao-novo-altar",
+          titulo: "Inauguração do Novo Altar da Capela do Seminário",
+          resumo:
+            "Em uma cerimônia solene, o Bispo Dom Gregório inaugurou o novo altar, fruto de meses de trabalho e dedicação da comunidade.",
+          imagemURL:
+            "https://via.placeholder.com/1200x500?text=Imagem+Noticia+1",
+          conteudo: `
+                    <p>A cerimônia de inauguração, realizada neste último domingo, marcou um momento de profunda espiritualidade para a Diocese. O evento contou com a presença de todo o clero, seminaristas, e fiéis.</p>
+                    <h2>A importância do Novo Altar</h2>
+                    <p>O novo altar, feito em madeira maciça e com detalhes entalhados à mão, é um presente para a comunidade. Ele simboliza a centralidade de Cristo na vida da Igreja e na formação dos futuros sacerdotes.</p>
+                    <p>Durante a homilia, Dom Gregório ressaltou a importância de zelar pela beleza e pela dignidade do culto divino, elementos essenciais para a formação integral do seminarista.</p>
+                    <h3>Obras e Manutenção</h3>
+                    <p>As obras de arte sacra foram supervisionadas pelo artista plástico João da Silva, que buscou inspiração na tradição barroca da região. Todo o projeto visa não apenas a estética, mas a durabilidade e a funcionalidade do espaço litúrgico.</p>
+                `,
+        },
+        {
+          slug: "visita-do-bispo-ao-seminario",
+          titulo: "Visita Pastoral de Dom Gregório e Encontro com Seminaristas",
+          resumo:
+            "O Bispo Diocesano, Dom Gregório, dedicou um dia inteiro à comunidade do seminário, realizando atendimentos e um encontro formativo.",
+          imagemURL:
+            "https://via.placeholder.com/1200x500?text=Imagem+Noticia+2",
+          conteudo: `
+                    <p>A presença do Bispo é sempre um momento de alegria e fortalecimento vocacional. O encontro com os seminaristas foi marcado pela escuta atenta e pelo diálogo aberto sobre os desafios da formação.</p>
+                    <p>Dom Gregório incentivou os jovens a perseverarem na oração e nos estudos, lembrando que a Igreja espera muito deles. A visita culminou com a celebração da Santa Missa, presidida pelo próprio Bispo, na capela principal.</p>
+                `,
+        },
+        // ... Mantenha o mockNewsData completo aqui para buscar a notícia específica
+      ];
+
+      // Simula o filtro do CMS
+      const resultado = mockNewsData.find((item) => item.slug === slug);
+      return resultado || null;
+    }
+
+    // O arquivo JSON no seu FTP
+    const NEWS_DATA_URL = "./data/noticias.json";
+
+    // Esta função busca TODAS as notícias e filtra pelo slug
+    async function fetchNewsBySlug(slug) {
+      try {
+        const response = await fetch(NEWS_DATA_URL);
+        if (!response.ok) {
+          throw new Error(`Erro ao carregar o JSON: ${response.status}`);
+        }
+        const newsList = await response.json();
+
+        // Filtra a lista completa para encontrar a notícia pelo slug
+        const resultado = newsList.find((item) => item.slug === slug);
+        return resultado || null;
+      } catch (error) {
+        console.error("Falha ao carregar notícias:", error);
+        return null;
+      }
+    }
+
+    // ... (O restante do código do DOMContentLoaded em noticia.html deve ser mantido, pois ele usa fetchNewsBySlug)
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 1. Extrair o Slug da URL (ex: "visita-do-bispo-ao-seminario" de ?slug=...)
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("slug");
+
+      const artigoContainer = document.getElementById("artigo-container");
+
+      if (!slug) {
+        artigoContainer.innerHTML =
+          '<h1 id="artigo-titulo">Erro 404</h1><p style="text-align:center;">Notícia não especificada na URL. Por favor, volte à página inicial.</p>';
+        document.title = "Erro | Seminário";
+        return;
+      }
+
+      try {
+        // 2. Buscar o Conteúdo
+        const noticia = await fetchNewsBySlug(slug);
+
+        if (!noticia) {
+          artigoContainer.innerHTML =
+            '<h1 id="artigo-titulo">Notícia Não Encontrada</h1><p style="text-align:center;">Não foi possível encontrar um artigo com o slug: <strong>' +
+            slug +
+            "</strong></p>";
+          document.title = "404 Not Found | Seminário";
+          return;
+        }
+
+        // 3. Injetar o Conteúdo no Template
+        document.getElementById("artigo-titulo").textContent = noticia.titulo;
+        document.getElementById(
+          "artigo-resumo"
+        ).innerHTML = `<p>${noticia.resumo}</p>`;
+        document.getElementById(
+          "artigo-imagem"
+        ).innerHTML = `<img src="${noticia.imagemURL}" alt="${noticia.titulo}" />`;
+        document.getElementById("artigo-conteudo").innerHTML = noticia.conteudo;
+
+        // Opcional: Atualizar o título da aba do navegador
+        document.title = noticia.titulo + " | Seminário Diocesano";
+      } catch (error) {
+        console.error("Erro ao buscar notícia:", error);
+        artigoContainer.innerHTML =
+          '<h1 id="artigo-titulo">Erro de Conexão</h1><p style="text-align:center;">Não foi possível carregar a notícia. Verifique o servidor CMS.</p>';
+      }
+    });
+  </script>
 </html>
