@@ -233,20 +233,22 @@ body {
   width: 75em;
   height: auto;
 }
-@media (max-width: 1024px){
-  #banner-matricula{
+
+@media (max-width: 1024px) {
+  #banner-matricula {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  #banner-matricula a img{
+
+  #banner-matricula a img {
     height: 15em;
     width: auto;
   }
 }
 
-#banner-matricula{
+#banner-matricula {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,7 +259,8 @@ body {
   padding-top: 2em;
   padding-bottom: 2em;
 }
-#banner-matricula img{
+
+#banner-matricula img {
   color: white;
   text-decoration: none;
   margin-left: 0.5em;
@@ -265,10 +268,12 @@ body {
   height: 20em;
   width: auto;
 }
-#banner-matricula img:hover{
+
+#banner-matricula img:hover {
   filter: brightness(0.9);
   cursor: pointer;
 }
+
 .botoes {
   position: absolute;
   top: 50%;
@@ -647,7 +652,8 @@ footer {
 
 #titulo-matricula2026 {
   font-family: "pentagram", sans-serif;
-  font-size: clamp(1.6em, 4vw, 2.3em); /* ajusta de acordo com a tela */
+  font-size: clamp(1.6em, 4vw, 2.3em);
+  /* ajusta de acordo com a tela */
   color: #354ea0ff;
   text-align: center;
   margin-bottom: 0.3em;
@@ -658,7 +664,8 @@ footer {
   flex-direction: column;
   gap: 0.8em;
   width: 80%;
-  max-width: 800px; /* não deixa ficar gigante em telas grandes */
+  max-width: 800px;
+  /* não deixa ficar gigante em telas grandes */
 }
 
 #documento-listagem {
@@ -684,7 +691,8 @@ footer {
 
 #informacoes-matricula2026 {
   display: flex;
-  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+  flex-wrap: wrap;
+  /* permite quebrar em telas pequenas */
   gap: 1.5em;
   justify-content: space-between;
   align-items: flex-start;
@@ -745,7 +753,8 @@ footer {
   margin-bottom: -5em;
   padding-bottom: 2em;
   background-image: url('../media/seimnario-fundo-educandario.webp');
-  background-size: cover;   /* cobre toda a tela */
+  background-size: cover;
+  /* cobre toda a tela */
   background-position: center;
   height: 100%;
 }
@@ -762,10 +771,12 @@ footer {
     align-items: center;
     text-align: center;
   }
-  #email-matricula2026{
+
+  #email-matricula2026 {
     text-align: center;
   }
-  #matricula2026{
+
+  #matricula2026 {
     justify-content: start;
     height: auto;
     min-height: 0px;
@@ -785,11 +796,186 @@ footer {
   #email-matricula2026 a {
     font-size: 1.5em;
   }
-  #email-matricula2026 h1{
+
+  #email-matricula2026 h1 {
     font-size: 1.3em;
   }
 }
 
+/* --- Estilos do Widget Evangelho --- */
+
+#secao-evangelho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+  /* Espaçamento do elemento anterior */
+  margin-bottom: 2rem;
+}
+
+#titulo-evangelho-container {
+  display: flex;
+  justify-content: flex-start;
+  /* Alinhado à esquerda como nas Notícias */
+  align-items: center;
+  width: 75%;
+  /* Mesma largura do container de notícias e história */
+  margin-bottom: 1.5rem;
+}
+
+#titulo-evangelho-container h1 {
+  color: #922C2Cff;
+  /* Cor padrão do site (Auburn) */
+  font-size: 1.7em;
+  margin: 0;
+  font-family: 'pentagram', serif;
+  white-space: nowrap;
+}
+
+#linha-evangelho {
+  width: 100%;
+  height: 0.1em;
+  background-color: #922C2Cff;
+  margin-left: 1em;
+  display: block;
+}
+
+#conteudo-evangelho {
+  width: 70%;
+  /* Levemente menor que o título para centralizar o texto */
+  background-color: #f9f9f9;
+  /* Fundo muito sutil para destacar a área */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  /* Sombra suave, menos agressiva que o teste */
+  border-left: 5px solid #922C2Cff;
+  /* Detalhe visual na cor do seminário */
+}
+
+#cabecalho-leitura {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+#evangelho-data {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+#evangelho-ref {
+  font-family: 'pentagram', serif;
+  color: #922C2Cff;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+#texto-biblico {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  white-space: pre-line;
+  /* Respeita as quebras de linha da API */
+}
+
+/* Responsividade para o Evangelho */
+@media (max-width: 768px) {
+  #titulo-evangelho-container {
+    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #linha-evangelho {
+    margin-left: 0;
+    margin-top: 0.5em;
+  }
+
+  #conteudo-evangelho {
+    width: 85%;
+    padding: 1.5rem;
+  }
+
+  #titulo-evangelho-container h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* --- Estilo dos Versículos do Evangelho --- */
+.versiculo {
+  font-size: 0.65em;
+  /* Reduz o tamanho da fonte */
+  vertical-align: super;
+  /* Eleva o número (sobrescrito) */
+  color: #922C2Cff;
+  /* Cor Vinho padrão do site (Auburn) */
+  font-weight: 700;
+  /* Negrito para leitura clara */
+  margin-right: 2px;
+  /* Um leve espaço antes do texto começar */
+  line-height: 0;
+  /* Evita que o número aumente a altura da linha do texto */
+  position: relative;
+  top: -0.1em;
+  /* Ajuste fino de altura */
+}
+
+/*Notícias e Artigos*/
+
+#artigo-container{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-top: -2rem;
+}
+#artigo-header{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  width: 100%;
+  height: 27.5rem;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  background-image: url(../media/seimnario-fundo-educandario.webp);
+}
+#artigo-titulo{
+  font-family: 'pentagram', serif;
+  font-size: 2.5em;
+  color: #922C2Cff;
+  margin-left: 1rem;
+}
+#artigo-subtitulo{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: gray;
+  margin-left: 1rem;
+  margin-right: 50rem;
+}
+#artigo-conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  text-align: start;
+  width: 75%;
+  margin: 0;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  margin-bottom: 5rem;
+}
 /* CSS HEX 
 --gold-metallic: #E1BD56ff;
 --poppy: #E23135ff;

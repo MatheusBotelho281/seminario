@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evangelho do Dia</title>
+
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --card: #ffffff;
+      --accent: #6a4cc4;
+      --radius: 14px;
+      --padding: 1.2rem;
+      --shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .evangelho-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: var(--padding);
+      max-width: 450px;
+      width: 100%;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 0.6rem;
+      color: var(--accent);
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .date {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .reading-ref {
+      font-weight: bold;
+      margin: 1rem 0 0.4rem;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    #text {
+      line-height: 1.45rem;
+      font-size: 0.95rem;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="evangelho-card">
+    <h2>Evangelho do Dia</h2>
+    <div class="date" id="today"></div>
+
+    <div id="reading-section">
+      <div class="reading-ref" id="ref"></div>
+      <div id="text"></div>
+    </div>
+  </div>
+
+  <script>
+    const apiURL = "https://liturgia.up.railway.app/v2/";
+
+    function formatDateBR(date) {
+      return date.toLocaleDateString("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    document.getElementById("today").textContent = formatDateBR(new Date());
+
+    async function loadEvangelho() {
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+
+        // Acesso exato ao evangelho de acordo com o formato fornecido
+        const evangelho = data.leituras?.evangelho?.[0];
+
+        if (!evangelho) {
+          document.getElementById("ref").textContent = "Evangelho não encontrado";
+          document.getElementById("text").textContent = "A API não retornou dados de evangelho para hoje.";
+          return;
+        }
+
+        document.getElementById("ref").textContent =
+          evangelho.referencia || evangelho.titulo || "Evangelho";
+
+        document.getElementById("text").innerHTML =
+          evangelho.texto || "Texto não disponível.";
+
+      } catch (err) {
+        console.error("Erro:", err);
+        document.getElementById("ref").textContent = "Erro ao carregar";
+        document.getElementById("text").textContent =
+          "Não foi possível obter o Evangelho. Verifique a API.";
+      }
+    }
+
+    loadEvangelho();
+  </script>
+
+</body>
+</html>

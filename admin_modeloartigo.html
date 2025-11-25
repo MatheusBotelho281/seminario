@@ -11,7 +11,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <script src="./js/scripts.js" defer></script>
-    <script src="./js/menu.js" defer></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const menus = [
@@ -111,7 +110,10 @@
         <div id="linha"></div>
         <div>
           <a id="logo" href="./index.html">
-            <img src="./media/brasao-seminario.webp" alt="Brasão do Seminário" />
+            <img
+              src="./media/brasao-seminario.webp"
+              alt="Brasão do Seminário"
+            />
             <h1>
               Seminário Diocesano<br />
               Nossa Senhora do Amor Divino
@@ -159,13 +161,86 @@
               }
             </style>
           </head>
-          <header>
-            <!-- mini menu e logos -->
-            <div id="mini-menu"> ... </div>
-            
-            <!-- Aqui o menu será carregado -->
-            <div id="menu-placeholder"></div>
-          </header>
+          <body>
+            <div id="divisoria-mobile">
+              <button id="menu-btn" onclick="toggleMenu()">☰</button>
+              <div id="menu-mobile" class="hidden">
+                <ul>
+                  <ul>
+                    <h1 id="titulo-menu-mobile">Seminário</h1>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="./historia.html">História</a>
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="">Formação</a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <h1 id="titulo-menu-mobile">
+                      <a
+                        style="text-decoration: none; color: white"
+                        href="/educandario.html"
+                        >Educandário</a
+                      >
+                    </h1>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="">Projeto</a>
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a
+                        id="li-menu-mobile"
+                        href="./media/2026 - Formulário de Requerimento de Matrícula.pdf"
+                        >Requerimento de Matrícula</a
+                      >
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a
+                        id="li-menu-mobile"
+                        href="./media/Edital_Educandário_Seminario_Bolsa 2026.pdf"
+                        >Regras sobre a Bolsa de Estudos</a
+                      >
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a
+                        id="li-menu-mobile"
+                        href="./media/Formulario_avaliação_socioeconomica_Educandário_2026.pdf"
+                        >Formulário de Bolsa</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <h1 id="titulo-menu-mobile">Vocação</h1>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="">Discernimento</a>
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href=""
+                        >Contato Pastoral Vocacional</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <h1 id="titulo-menu-mobile">Mais</h1>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="">Contato</a>
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="">Notícias</a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+
+            <script>
+              // Função para alternar o menu
+              function toggleMenu() {
+                var menu = document.getElementById("menu-mobile"); // Pega o elemento de id 'menu'
+                menu.classList.toggle("hidden"); // Alterna a classe 'hidden' para mostrar ou esconder o menu
+              }
+            </script>
+          </body>
+        </html>
 
         <div id="menu-principal">
           <nav>
@@ -217,185 +292,39 @@
     </header>
 
     <main>
-      <div id="conteudo-geral">
-        <div id="banner">
-          <div id="insta-viewer"></div>
-          <div id="noticias-banner">
-            <div id="carrosel-noticias" style="display: none;">
-              <div class="carrossel-container">
-                <img src="./media/site_em_construcao.jpg" alt="" />
-                <img src="./media/site_em_construcao.jpg" alt="" />
-                <img src="./media/site_em_construcao.jpg" alt="" />
-              </div>
-              <div class="botoes">
-                <button id="prev">&#10094;</button>
-                <button id="next">&#10095;</button>
-              </div>
-            </div>
-          </div>
+      <div id="artigo-container">
+        <div id="artigo-header">
+          <h1 id="artigo-titulo">Modelo de Notícia</h1>
+          <h2 id="artigo-subtitulo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At nostrum
+            fuga culpa, iste ad veritatis. Maxime qui cupiditate deleniti,
+            incidunt at amet temporibus dolores reiciendis omnis recusandae
+            suscipit eaque aliquid?
+          </h2>
         </div>
-        <div id="banner-matricula">
-          <a
-            href="./educandario.html"
-            ><img
-              src="./media/matricula-1.png"
-              alt="Banner Matrícula 2026"
-          /></a>
-          <a href="./educandario.html"><img
-            src="./media/matricula-2.png"
-            alt="Banner Matrícula 2026"
-        /></a>
+        <div id="artigo-conteudo">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            laboriosam accusamus provident adipisci, explicabo expedita! Autem
+            nostrum iste nesciunt, sapiente sed voluptate quae minima, quis
+            doloribus fugiat expedita consequuntur hic. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Iusto quasi illo cum facere
+            ratione vero quisquam repellat distinctio voluptatem fugiat, quod
+            neque ullam labore porro, eveniet maiores? Obcaecati, voluptatum
+            commodi.
+          </p>
         </div>
-        <!--
-          <div id="content">
-            <div id="feed-noticias">
-              <div id="titulo-noticias">
-                <h1>Notícias</h1>
-                <div id="linha-noticias"></div>
-              </div>
-              <div id="feed-de-noticias">
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-
-                <div id="noticia">
-            <a>
-              <img src="./media/foto-seminario.webp" alt="" />
-            </a>
-            <a id="noticia-link">
-              <h2>Lançamento do Novo Site e da Revista do Seminário</h2>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Quisquam quidem, voluptates, quod, quos quas quae quia
-              quibusdam consequuntur, doloribus voluptate quia quibusdam
-              consequuntur, doloribus voluptate.
-            </p>
-            <a id="leia-mais" href="#">Leia mais</a>
-                </div>
-              </div>
-            </div>
-          </div>
-              </div>
-        -->
-
-      <!-- Ainda em construção, será um widget do Insta estilizado -->
-      <div
-        id="widget-instagram"
-        style="
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin-top: 5rem;
-          background-color: #922c2cff;
-          padding-top: 2rem;
-          padding-bottom: 2rem;
-        "
-      >
-        <div
-          id="titulo-instagram"
-          style="text-align: center; margin-bottom: 1.5rem"
-        >
-          <h1 style="color: white; font-size: 2rem; margin: 0">
-            <i class="fa-brands fa-instagram"></i> Instagram
-          </h1>
-          <div
-            style="
-              width: 80px;
-              height: 4px;
-              background: white;
-              margin: 0.5rem auto 0 auto;
-              border-radius: 2px;
-            "
-          ></div>
+        <div id="artigo-imagem">
+          <img src="https://placehold.co/" alt="" />
         </div>
-
-        <!-- LightWidget WIDGET -->
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe
-          src="//lightwidget.com/widgets/40d1505f06365bc5a33f8990b1eeb8e9.html"
-          scrolling="no"
-          allowtransparency="true"
-          class="lightwidget-widget"
-          style="width: 60%; border: 0; overflow: hidden"
-        ></iframe>
+        <div id="artigo-conteudo">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+            ducimus quas dolor eligendi sequi numquam, vitae deserunt deleniti
+            excepturi similique molestiae quibusdam distinctio, error libero
+            sint, sunt quaerat. Harum, nostrum.
+          </p>
+        </div>
       </div>
     </main>
 

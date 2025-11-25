@@ -463,6 +463,73 @@
           style="width: 60%; border: 0; overflow: hidden"
         ></iframe>
       </div>
+      <div id="secao-evangelho">
+        <div id="titulo-evangelho-container">
+          <h1>Evangelho do Dia</h1>
+          <div id="linha-evangelho"></div>
+        </div>
+      
+        <div id="conteudo-evangelho">
+          <div id="cabecalho-leitura">
+            <p id="evangelho-data"></p>
+            <h2 id="evangelho-ref">Carregando...</h2>
+          </div>
+      
+          <div id="texto-biblico">
+            Carregando o texto sagrado...
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const apiURL = "https://liturgia.up.railway.app/v2/";
+      
+          function formatDateBR(date) {
+            const options = { weekday: "long", day: "2-digit", month: "long", year: "numeric" };
+            let dateString = date.toLocaleDateString("pt-BR", options);
+            return dateString.charAt(0).toUpperCase() + dateString.slice(1);
+          }
+      
+          document.getElementById("evangelho-data").textContent = formatDateBR(new Date());
+      
+          async function loadEvangelho() {
+      try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        const evangelho = data.leituras?.evangelho?.[0];
+
+        if (!evangelho) {
+          document.getElementById("evangelho-ref").textContent = "Evangelho não disponível";
+          document.getElementById("texto-biblico").textContent = "Não foi possível carregar o texto hoje.";
+          return;
+        }
+
+        document.getElementById("evangelho-ref").textContent =
+          evangelho.referencia || evangelho.titulo || "Santo Evangelho";
+
+        let textoBruto = evangelho.texto || "Texto não disponível.";
+        let textoFormatado = textoBruto.replace(/(\d+)/g, function(match) {
+
+          if (match.length <= 3) {
+            return '<span class="versiculo">' + match + '</span>';
+          }
+          return match;
+        });
+
+        document.getElementById("texto-biblico").innerHTML = textoFormatado;
+
+      } catch (err) {
+        console.error("Erro ao buscar liturgia:", err);
+        document.getElementById("evangelho-ref").textContent = "Erro de conexão";
+        document.getElementById("texto-biblico").textContent =
+          "Não foi possível obter o Evangelho. Verifique sua conexão.";
+      }
+    }
+      
+          loadEvangelho();
+        });
+      </script>
     </main>
 
     <footer>
