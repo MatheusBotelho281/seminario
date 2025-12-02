@@ -231,7 +231,7 @@ body {
 
 .carrossel-container img {
   width: 75em;
-  height: auto;
+  height: 30em;
 }
 
 @media (max-width: 1024px) {
@@ -1583,6 +1583,18 @@ footer {
   }
 }
 
+#resultado-matricula2026{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3em;
+}
+
+#informacoes-resultado-matricula2026{
+  font-family: 'pentagram', sans-serif;
+  font-size: 1.5em;
+}
 /* Fim dos novos estilos de admin */
 
 /* ---------------------------------------------------------------------- */
