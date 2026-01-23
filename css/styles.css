@@ -759,7 +759,6 @@ footer {
   height: 100%;
 }
 
-/* ======== MEDIA QUERIES ======== */
 @media (max-width: 768px) {
   #informacoes-matricula2026 {
     flex-direction: column;
@@ -1583,7 +1582,7 @@ footer {
   }
 }
 
-#resultado-matricula2026{
+#resultado-matricula2026 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1591,15 +1590,15 @@ footer {
   padding-top: 3em;
 }
 
-#informacoes-resultado-matricula2026{
+#informacoes-resultado-matricula2026 {
   font-family: 'pentagram', sans-serif;
   font-size: 1.5em;
 }
-/* Fim dos novos estilos de admin */
 
-/* ---------------------------------------------------------------------- */
-/* --- FIM DOS ESTILOS ESPECÍFICOS DE ADMIN --- */
-/* ---------------------------------------------------------------------- */
+#informacoes-resultado-matricula2026-ul {
+  display: flex;
+  flex-direction: column;
+}
 
 /* CSS HEX 
   --gold-metallic: #E1BD56ff;
