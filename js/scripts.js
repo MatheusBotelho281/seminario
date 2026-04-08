@@ -38,3 +38,9 @@ prevButton.addEventListener("click", () => {
   prevSlide();
   stopAutoPlay();
 });
+
+// Função para alternar o menu
+function toggleMenu() {
+  var menu = document.getElementById("menu-mobile"); // Pega o elemento de id 'menu'
+  menu.classList.toggle("hidden"); // Alterna a classe 'hidden' para mostrar ou esconder o menu
+}

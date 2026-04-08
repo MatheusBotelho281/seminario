@@ -74,27 +74,27 @@
           <ul>
             <li id="brasao-logo">
               <img
-                alt=""
-                src="./media/brasao-diocese.webp"
                 style="margin-right: 0.6em"
+                src="./media/brasao-diocese.webp"
+                alt=""
               /><a href="https://diocesepetropolis.com.br/"
                 >Diocese de Petrópolis</a
               >
             </li>
             <li id="brasao-logo">
               <img
-                alt=""
-                src="./media/brasao-arqui.webp"
                 style="height: 2.3em !important"
+                src="./media/brasao-arqui.webp"
+                alt=""
               /><a href="https://arqnit.org.br/portal/"
                 >Arquidiocese de Niterói</a
               >
             </li>
-            <li id="brasao-logo" style="margin-left: -0.3em">
+            <li style="margin-left: -0.3em" id="brasao-logo">
               <img
-                alt=""
-                src="./media/logo-cnbb.webp"
                 style="margin-right: -0.7em"
+                src="./media/logo-cnbb.webp"
+                alt=""
               /><a href="https://www.cnbb.org.br/">CNBB</a>
             </li>
           </ul>
@@ -109,8 +109,11 @@
         </div>
         <div id="linha"></div>
         <div>
-          <a href="./index.html" id="logo">
-            <img alt="Brasão do Seminário" src="./media/brasao-seminario.webp" />
+          <a id="logo" href="./index.html">
+            <img
+              src="./media/brasao-seminario.webp"
+              alt="Brasão do Seminário"
+            />
             <h1>
               Seminário Diocesano<br />
               Nossa Senhora do Amor Divino
@@ -118,13 +121,12 @@
           </a>
         </div>
         <!DOCTYPE html>
-
         <html lang="pt-br">
           <head>
-            <meta charset="utf-8" />
+            <meta charset="UTF-8" />
             <meta
-              content="width=device-width, initial-scale=1.0"
               name="viewport"
+              content="width=device-width, initial-scale=1.0"
             />
             <title>Menu Responsivo</title>
             <style>
@@ -162,21 +164,20 @@
           <body>
             <div id="divisoria-mobile">
               <button id="menu-btn" onclick="toggleMenu()">☰</button>
-              <div class="hidden" id="menu-mobile">
+              <div id="menu-mobile" class="hidden">
                 <ul>
                   <ul>
-                    <h1 id="titulo-menu-mobile">
-                      <a
-                        style="text-decoration: none; color: white"
-                        href="/index.html"
-                        >Seminário</a
-                      >
-                    </h1>
+                    <h1 id="titulo-menu-mobile">Seminário</h1>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile">História</a>
+                      <a id="li-menu-mobile" href="./historia.html">História</a>
                     </li>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile">Formação</a>
+                      <a id="li-menu-mobile" href="">Formação</a>
+                    </li>
+                    <li id="li-menu-mobile">
+                      <a id="li-menu-mobile" href="./cripta.html"
+                        >Capela Cripta</a
+                      >
                     </li>
                   </ul>
                   <ul>
@@ -215,10 +216,10 @@
                   <ul>
                     <h1 id="titulo-menu-mobile">Vocação</h1>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile">Discernimento</a>
+                      <a id="li-menu-mobile" href="">Discernimento</a>
                     </li>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile"
+                      <a id="li-menu-mobile" href=""
                         >Contato Pastoral Vocacional</a
                       >
                     </li>
@@ -226,15 +227,16 @@
                   <ul>
                     <h1 id="titulo-menu-mobile">Mais</h1>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile">Contato</a>
+                      <a id="li-menu-mobile" href="">Contato</a>
                     </li>
                     <li id="li-menu-mobile">
-                      <a href="" id="li-menu-mobile">Notícias</a>
+                      <a id="li-menu-mobile" href="">Notícias</a>
                     </li>
                   </ul>
                 </ul>
               </div>
             </div>
+
             <script>
               // Função para alternar o menu
               function toggleMenu() {
@@ -244,19 +246,21 @@
             </script>
           </body>
         </html>
+
         <div id="menu-principal">
           <nav>
             <ul id="menu">
               <li id="semi-dropdown">
-                <a href="./index.html">Seminário <span>▼</span></a>
-                <ul class="submenu" id="submenu-seminario">
-                  <li><a href="#">História</a></li>
+                <a href="#">Seminário <span>&#9660;</span></a>
+                <ul id="submenu-seminario" class="submenu">
+                  <li><a href="./historia.html">História</a></li>
                   <li><a href="#">Formação</a></li>
+                  <li><a href="./cripta.html">Capela Cripta</a></li>
                 </ul>
               </li>
               <li id="educ-dropdown">
-                <a href="./educandario.html">Educandário <span>▼</span></a>
-                <ul class="submenu" id="submenu-educandario">
+                <a href="/educandario.html">Educandário <span>&#9660;</span></a>
+                <ul id="submenu-educandario" class="submenu">
                   <li><a href="#">Projeto</a></li>
                   <li>
                     <a
@@ -279,10 +283,10 @@
                 </ul>
               </li>
               <li id="voc-dropdown">
-                <a href="#">Vocação <span>▼</span></a>
-                <ul class="submenu" id="submenu-vocacao">
+                <a href="#">Vocação <span>&#9660;</span></a>
+                <ul id="submenu-vocacao" class="submenu">
                   <li><a href="#">Discernimento</a></li>
-                  <li><a href="#">Contato Pastoral Vocacional</a></li>
+                  <li><a href="#">Contato Pastoral Vocacional </a></li>
                 </ul>
               </li>
               <li><a href="#">Contato</a></li>
@@ -341,14 +345,14 @@
           </p>
           <h1 id="titulo-texto-historia">Papa Pio XII cria a Diocese</h1>
           <p id="corpo-texto-historia">
-            A 13 de abril de 1946, pela Bula “Pastoralis qua urgemur”, o Papa Pio
-            XII criou a nova Diocese de Petrópolis, com território desmembrado
-            das Dioceses de Niterói e Barra do Piraí. O território da Diocese de
-            Petrópolis compreendia os seguintes municípios: Petrópolis,
-            Teresópolis, São José do Vale do Rio Preto, Magé, Guapimirim, Duque
-            de Caxias, São João de Meriti, parte do município de Três Rios
-            (Bemposta) e parte do município de Paraíba do Sul (Paróquia de
-            Inconfidência).
+            A 13 de abril de 1946, pela Bula “Pastoralis qua urgemur”, o Papa
+            Pio XII criou a nova Diocese de Petrópolis, com território
+            desmembrado das Dioceses de Niterói e Barra do Piraí. O território
+            da Diocese de Petrópolis compreendia os seguintes municípios:
+            Petrópolis, Teresópolis, São José do Vale do Rio Preto, Magé,
+            Guapimirim, Duque de Caxias, São João de Meriti, parte do município
+            de Três Rios (Bemposta) e parte do município de Paraíba do Sul
+            (Paróquia de Inconfidência).
           </p>
           <p id="corpo-texto-historia">
             Com a criação da Diocese de Nova Iguaçu a 26 de março de 1960,

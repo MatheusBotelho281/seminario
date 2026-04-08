@@ -3,6 +3,97 @@
   src: url('../media/PentaGram\'s\ Ghost\ Whisperers.ttf');
 }
 
+
+/* HEADER */
+.topo {
+  background: #922c2c;
+  color: white;
+  padding: 10px;
+}
+
+/* BOTÃO MOBILE */
+#menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MENU */
+#menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#menu-principal li {
+  position: relative;
+  padding: 10px;
+}
+
+/* LINKS */
+#menu-principal a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SUBMENU */
+.submenu {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+}
+
+.submenu a {
+  color: black;
+  display: block;
+  padding: 10px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  #menu-toggle {
+    display: block;
+  }
+
+  #menu-principal {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #922c2c;
+  }
+
+  #menu-principal.active {
+    display: flex !important;
+  }
+
+  #menu-principal ul {
+    flex-direction: column;
+  }
+
+  #menu-principal li {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .submenu {
+    position: relative;
+    background: #7a2222;
+  }
+
+  .submenu a {
+    color: white;
+  }
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
