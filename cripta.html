@@ -175,7 +175,9 @@
                       <a id="li-menu-mobile" href="">Formação</a>
                     </li>
                     <li id="li-menu-mobile">
-                        <a id="li-menu-mobile" href="./cripta.html">Capela Cripta</a>
+                      <a id="li-menu-mobile" href="./cripta.html"
+                        >Capela Cripta</a
+                      >
                     </li>
                   </ul>
                   <ul>
@@ -296,49 +298,159 @@
     </header>
 
     <main>
-        <style>
-            #cr-general-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 2em;
-            }
-            #cr-titulo {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            #cr-titulo h1 {
-                font-size: 2.5em;
-                padding: 0;
-                font-family: 'pentagram';
-                color: #922c2cff;
-            }
-            #cr-titulo h2 {
-                padding: 0;
-                font-size: 1em;
-                margin-bottom: 1em;
-                font-family: 'Roboto', sans-serif;
-                color: gray;
-            }
-            #cr-titulo-img img {
-                width: 100%;
-                max-width: 600px;
-                height: auto;
-                border-radius: 10px;
-            }
-        </style>
-        <div id="cr-general-container">
-            <div id="cr-titulo">
-                <h1>Capela Cripta</h1>
-                <h2>Projeto Sacerdos in Aeternum</h2>
-                <div id="cr-titulo-img">
-                    <img src="" alt="">
-                </div>
+      <style>
+        #cr-general-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          background-image: url("media/brasao-seminario.webp");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-blend-mode: lighten;
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+        #cr-titulo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        #cr-titulo h1 {
+          font-size: 2.5em;
+          padding: 0;
+          font-family: "pentagram";
+          color: #922c2cff;
+          transform-origin: center top;
+          transition: transform 0.05s linear;
+        }
+        #cr-titulo h2 {
+          padding: 0;
+          font-size: 1em;
+          margin-bottom: 1em;
+          font-family: "Roboto", sans-serif;
+          color: gray;
+        }
+        #img-move {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          border-radius: 0 0 50px;
+          position: fixed;
+          margin: auto;
+          left: 0;
+          top: 20.8em;
+        }
+        #cr-content {
+          display: flex;
+          justify-content: center;
+          margin-top: 2em;
+          max-width: 50em;
+        }
+        #cr-content-text {
+          font-family: "Roboto", sans-serif;
+          font-size: 1.2em;
+          line-height: 1.6;
+          color: #333;
+        }
+        #info-cripta {
+          position: relative;
+          top: 11em;
+          transition: top 0.05s linear;
+        }
+      </style>
+      <div id="cr-general-container">
+        <div id="cr-titulo">
+          <h1>Capela Cripta</h1>
+          <h2>Projeto Sacerdos in Aeternum</h2>
+          <div id="cr-titulo-img">
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const imgMove = document.querySelector("#img-move");
+                const titulo = document.querySelector("#cr-titulo h1");
+                const subtitulo = document.querySelector("#cr-titulo h2");
+                const texto = document.querySelector("#info-cripta");
 
+                const speed = 0.4;
+
+                // Ponto em que o texto já chegou à posição final (em px de scroll)
+                const scrollMax = 300;
+
+                window.addEventListener("scroll", () => {
+                  const scrollY = window.scrollY;
+
+                  // --- GIF: desliza para a esquerda ---
+                  imgMove.style.transform = `translateX(-${scrollY * speed}px)`;
+
+                  // --- TÍTULO: começa 110% e vai até 100% ---
+                  const progress = Math.min(scrollY / scrollMax, 1); // 0 → 1
+                  const scale = 1.1 - 0.1 * progress; // 1.1 → 1.0
+                  titulo.style.transform = `scale(${scale})`;
+                  titulo.style.transformOrigin = "center top";
+
+                  // --- TEXTO: sobe de 10em para 0 conforme rola ---
+                  const textOffset = Math.max(
+                    11 - (scrollY / scrollMax) * 10,
+                    0
+                  );
+                  texto.style.top = `${textOffset}em`;
+                });
+              });
+            </script>
+            <img id="img-move" src="./media/cripta-gif.gif" alt="" />
+          </div>
+          <div id="cr-content">
+            <div id="cr-content-text">
+              <p id="info-cripta">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                quod accusamus repudiandae ea ad natus sequi, iste molestias
+                praesentium, minus et velit commodi ipsam, voluptatem quia
+                architecto inventore aut quos! Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Reiciendis assumenda veniam quo,
+                eligendi accusamus aliquid eum odio facilis laudantium qui culpa
+                et incidunt possimus dolorum, asperiores delectus magnam
+                officiis omnis! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Aperiam, dolor ratione! Non provident eligendi
+                velit ipsum earum in magni nulla, ut mollitia, fugit repellat
+                sapiente? Nulla, enim error. Cum, eveniet. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Dicta quod accusamus
+                repudiandae ea ad natus sequi, iste molestias praesentium, minus
+                et velit commodi ipsam, voluptatem quia architecto inventore aut
+                quos! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Reiciendis assumenda veniam quo, eligendi accusamus aliquid eum
+                odio facilis laudantium qui culpa et incidunt possimus dolorum,
+                asperiores delectus magnam officiis omnis! Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Aperiam, dolor ratione! Non
+                provident eligendi velit ipsum earum in magni nulla, ut
+                mollitia, fugit repellat sapiente? Nulla, enim error. Cum,
+                eveniet. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Dicta quod accusamus repudiandae ea ad natus sequi, iste
+                molestias praesentium, minus et velit commodi ipsam, voluptatem
+                quia architecto inventore aut quos! Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Reiciendis assumenda veniam quo,
+                eligendi accusamus aliquid eum odio facilis laudantium qui culpa
+                et incidunt possimus dolorum, asperiores delectus magnam
+                officiis omnis! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Aperiam, dolor ratione! Non provident eligendi
+                velit ipsum earum in magni nulla, ut mollitia, fugit repellat
+                sapiente? Nulla, enim error. Cum, eveniet. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Dicta quod accusamus
+                repudiandae ea ad natus sequi, iste molestias praesentium, minus
+                et velit commodi ipsam, voluptatem quia architecto inventore aut
+                quos! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Reiciendis assumenda veniam quo, eligendi accusamus aliquid eum
+                odio facilis laudantium qui culpa et incidunt possimus dolorum,
+                asperiores delectus magnam officiis omnis! Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Aperiam, dolor ratione! Non
+                provident eligendi velit ipsum earum in magni nulla, ut
+                mollitia, fugit repellat sapiente? Nulla, enim error. Cum,
+                eveniet.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
