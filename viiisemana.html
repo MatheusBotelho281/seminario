@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIII Semana de Formação Humana</title>
+  </head>
+
+  <style>
+    /* largura da barra */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* fundo */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* parte que se move */
+    ::-webkit-scrollbar-thumb {
+      background: #01a0fe;
+      border-radius: 0;
+      transition: background 0.3s;
+    }
+
+    /* hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #012d6d;
+    }
+    @font-face {
+      font-family: "heading01";
+      src: url("./media/HeadingNowTrial-01Thin.ttf");
+    }
+    @font-face {
+      font-family: "heading61";
+      src: url("./media/HeadingNowTrial-61Thin.ttf");
+    }
+    @font-face {
+      font-family: "heading66";
+      src: url("./media/HeadingNowTrial-66Bold.ttf");
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #header-container {
+      width: 100%;
+      height: 100%;
+      background-color: #01a0fe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #logo img {
+      height: 15em;
+      cursor: pointer;
+    }
+    #menu-container {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+    }
+    #menu {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #list-menu {
+      background-color: #01a0fe;
+      display: flex;
+      width: 100%;
+      list-style: none;
+      gap: 2em;
+      padding: 0;
+      color: #012d6d;
+      font-family: "heading66";
+      text-transform: uppercase;
+      justify-content: center;
+    }
+    #list-menu a {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    #list-menu a:hover {
+      color: white;
+    }
+    #programa {
+      display: none;
+    }
+    #palestrantes {
+      display: none;
+    }
+    #material {
+      display: none;
+    }
+    .section-container {
+      width: 100%;
+      padding-bottom: 2em;
+      background: linear-gradient(90deg, #012d6d, #01a0fe);
+    }
+
+    .section-title {
+      font-family: "heading66";
+      color: white;
+      margin: 0;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.5);
+      margin: 1em;
+      padding: 1em 3em;
+    }
+
+    .card h2 {
+      font-family: "heading61";
+      color: #01a0fe;
+    }
+
+    .card p {
+      margin: 0;
+      color: white;
+    }
+    .card a{
+        color: white;
+    } #inicio {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #012d6d, #01a0fe);
+      color: white;
+      text-align: center;
+      padding: 4em 0 6em 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #inicio h1 {
+      font-family: "heading66";
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    #inicio p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 1.5em;
+      line-height: 1.5;
+    }
+
+    #inicio button {
+      background: white;
+      color: #012d6d;
+      border: none;
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      font-family: "heading66";
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #inicio button:hover {
+      background: #dbe7ff;
+      transform: scale(1.05);
+    }
+    #qrcode {
+      width: auto;
+      height: 12em;
+      margin: 2em 0 0 0;
+      border-radius: 10px;
+    }
+    #numero {
+      font-family: "arial";
+      font-weight: 100;
+    }
+  </style>
+
+  <body>
+    <div id="header-container">
+      <div id="header">
+        <div id="logo">
+          <img id="homeBtn" src="./media/Logo PNG.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div id="menu-container">
+      <div id="menu">
+        <li id="list-menu">
+          <a id="inicioBtn">Início</a>
+          <a id="programaBtn">Programação</a>
+          <a id="palestraBtn">Palestrantes</a>
+          <a id="materialBtn">Material</a>
+        </li>
+      </div>
+    </div>
+    <div id="inicio">
+      <h1>VIII Semana de Formação Humana</h1>
+      <p>
+        Um tempo de crescimento, reflexão e formação, com especial atenção à
+        dimensão humana da formação. Nesta VIII edição, o tema central nos
+        convida a aprofundar: [coloque aqui o tema].<br />
+        <br />
+        "Citação de um papa falando sobre o tema central." <br />
+        Papa ...
+      </p>
+      <button id="irPrograma">Entrar no Grupo de WhatsApp</button>
+      <img id="qrcode" src="./media/viii-qrcode.png" alt="" />
+    </div>
+    <div id="programa" class="section-container">
+      <h1 class="section-title">PROGRAMAÇÃO</h1>
+
+      <div class="card">
+        <h2>Dia <span id="numero">15</span></h2>
+        <p>08:00 - Abertura</p>
+        <p>09:00 - Palestra</p>
+      </div>
+
+      <div class="card">
+        <h2>Dia <span id="numero">16</span></h2>
+        <p>08:00 - Missa</p>
+        <p>10:00 - Formação</p>
+      </div>
+    </div>
+    <div id="palestrantes" class="section-container">
+      <h1 class="section-title">PALESTRANTES</h1>
+
+      <div class="card">
+        <h2>Pe. João Silva</h2>
+        <p>Especialista em Teologia Moral</p>
+      </div>
+
+      <div class="card">
+        <h2>Pe. Pedro Santos</h2>
+        <p>Formador espiritual</p>
+      </div>
+    </div>
+    <div id="material" class="section-container">
+      <h1 class="section-title">MATERIAL</h1>
+
+      <div class="card">
+        <h2>Apostila - Palestra Pe. João</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+
+      <div class="card">
+        <h2>Slides da palestra</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const togglePrograma = document.getElementById("programaBtn");
+    const togglePalestra = document.getElementById("palestraBtn");
+    const toggleMaterial = document.getElementById("materialBtn");
+    const toggleInicio = document.getElementById("inicioBtn");
+    const homeBtn = document.getElementById("homeBtn");
+
+    const inicio = document.getElementById("inicio");
+    const programa = document.getElementById("programa");
+    const palestrantes = document.getElementById("palestrantes");
+    const material = document.getElementById("material");
+
+    function esconderTudo() {
+      inicio.style.display = "none";
+      programa.style.display = "none";
+      palestrantes.style.display = "none";
+      material.style.display = "none";
+    }
+
+    togglePrograma.addEventListener("click", () => {
+      esconderTudo();
+      programa.style.display = "block";
+    });
+
+    togglePalestra.addEventListener("click", () => {
+      esconderTudo();
+      palestrantes.style.display = "block";
+    });
+
+    toggleMaterial.addEventListener("click", () => {
+      esconderTudo();
+      material.style.display = "block";
+    });
+
+    homeBtn.addEventListener("click", () => {
+      esconderTudo();
+      inicio.style.display = "flex";
+    });
+
+    toggleInicio.addEventListener("click", () => {
+      esconderTudo();
+      inicio.style.display = "flex";
+    });
+
+    const palestrantesCards = document.querySelectorAll(".palestrante");
+
+    palestrantesCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const content = card.querySelector(".dropdown-content");
+        content.classList.toggle("open");
+      });
+    });
+  </script>
+</html>
