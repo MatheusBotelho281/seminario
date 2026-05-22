@@ -46,6 +46,9 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      background-color: #01a0fe;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     #header-container {
@@ -55,12 +58,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
     #logo {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      width: 90vw;
+      width: 90%;
     }
     #logo img {
       height: 15em;
@@ -75,7 +79,7 @@
       justify-content: center;
     }
     #menu {
-      width: 100vw;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -95,9 +99,14 @@
       flex-direction: row;
       gap: 2em;
     }
+    #ondas1,
+    #ondas2 {
+      max-width: 100vw;
+      height: auto;
+    }
     #list-menu a {
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     #list-menu a:hover {
       color: white;
@@ -126,9 +135,10 @@
     }
 
     .card {
-      background: rgba(0, 0, 0, 0.5);
+      background: #002a4f;
       margin: 1em;
-      padding: 1em 3em;
+      padding: 1em;
+      box-sizing: border-box;
     }
 
     .card h2 {
@@ -219,6 +229,16 @@
     #miniLogo {
       display: none;
     }
+    #cardContent {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    #cardContent img {
+      width: auto;
+      height: 10em;
+      margin: 0 2em 0 0;
+    }
     @font-face {
       font-family: "heading01";
       src: url("./media/HeadingNowTrial-01Thin.ttf");
@@ -245,12 +265,24 @@
         width: 20em;
         height: auto !important;
       }
+      #header-container {
+        height: 15.5em;
+      }
     }
     @media (max-width: 630px) {
       #list-menu {
         font-size: 1.1em;
         gap: 0.5em;
         flex-direction: column !important;
+      }
+      .card p {
+        font-size: 1.5em;
+      }
+      .card h2 {
+        font-size: 1.7em;
+      }
+      #cardContent img {
+        height: 8em;
       }
     }
     @media (max-width: 500px) {
@@ -260,6 +292,20 @@
       #homeBtn {
         height: 6em !important;
         margin: 1em 0;
+      }
+    }
+    @media (max-width: 400px) {
+      #menu-container {
+        height: 8em;
+      }
+      .card p {
+        font-size: 1.1em;
+      }
+      .card h2 {
+        font-size: 1.2em;
+      }
+      #cardContent img {
+        height: 8em;
       }
     }
   </style>
@@ -340,46 +386,174 @@
       <h1 class="section-title">PROGRAMAÇÃO</h1>
 
       <div class="card">
-        <h2>Segunda Feira, dia <span id="numero">15</span></h2>
-        <p>07:30 - Santa Missa com Dom Joel</p>
-        <p>08:30 - Café da Manhã</p>
+        <h2>Segunda-Feira, dia <span id="numero">15</span></h2>
+        <p><span id="spanBold">07:30</span> - Santa Missa com Dom Joel</p>
+        <p><span id="spanBold">08:30</span> - Café da Manhã</p>
         <p>
-          09:00 - 1ª Conferência: O Princípio de Transcendência (Pe. Hector)
+          <span id="spanBold">09:00</span> - 1ª Conferência: O Princípio de
+          Transcendência (Pe. Hector)
         </p>
-        <p>10:30 - Lanche</p>
-        <p>11:00 - 2ª Conferência: Formação da Consciência (Pe. Anderson)</p>
-        <p>12:20 - Ofício e Hora Média</p>
-        <p>12:50 - Almoço</p>
+        <p><span id="spanBold">10:30</span> - Lanche</p>
         <p>
-          14:30 - 3ª Conferência: Seminário como Escola de Vida Cristã (Pe. Luis
-          Carlos)
+          <span id="spanBold">11:00</span> - 2ª Conferência: Formação da
+          Consciência (Pe. Anderson)
         </p>
-        <p>15:45 - Lanche</p>
-        <p>16:00 - Torneio de Futebol</p>
-        <p>17:30 - Banho</p>
-        <p>18:00 - Orações na Capela</p>
-        <p>18:30 - Vésperas</p>
-        <p>19:30 - Fórum: O Mais Belo Ideal do Sacerdócio</p>
-        <p>21:30 - Completas</p>
+        <p><span id="spanBold">12:00</span> - Intervalo</p>
+        <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
+        <p><span id="spanBold">12:50</span> - Almoço</p>
+        <p>
+          <span id="spanBold">14:30</span> - 3ª Conferência: Seminário como
+          Escola de Vida Cristã (Pe. Luis Carlos)
+        </p>
+        <p><span id="spanBold">15:45</span> - Lanche</p>
+        <p><span id="spanBold">16:00</span> - Torneio de Futebol</p>
+        <p><span id="spanBold">17:30</span> - Banho</p>
+        <p><span id="spanBold">18:00</span> - Orações na Capela</p>
+        <p><span id="spanBold">18:30</span> - Vésperas</p>
+        <p>
+          <span id="spanBold">19:30</span> - Fórum: O Mais Belo Ideal do
+          Sacerdócio
+        </p>
+        <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
 
       <div class="card">
-        <h2>Dia <span id="numero">16</span></h2>
-        <p>08:00 - Missa</p>
-        <p>10:00 - Formação</p>
+        <h2>Terça-Feira, dia <span id="numero">16</span></h2>
+        <p><span id="spanBold">07:00</span> - Laudes</p>
+        <p>
+          <span id="spanBold">07:30</span> - Santa Missa com Pe. Luis Carlos
+        </p>
+        <p><span id="spanBold">08:00</span> - Café da Manhã</p>
+        <p>
+          <span id="spanBold">08:30</span> - 1ª Conferência: Desorientação de
+          Si: Reflexo na Vida Cotidiana ()
+        </p>
+        <p><span id="spanBold">10:00</span> - Lanche</p>
+        <p>
+          <span id="spanBold">10:30</span> - 2ª Conferência: Desenvolvimento e
+          Maturidade da Personalidade ()
+        </p>
+        <p><span id="spanBold">12:00</span> - Intervalo</p>
+        <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
+        <p><span id="spanBold">12:50</span> - Almoço</p>
+        <p>
+          <span id="spanBold">14:30</span> - 3ª Conferência: Liberdade Psíquica
+          e Responsabilidade (Dra. Sandra)
+        </p>
+        <p><span id="spanBold">15:45</span> - Lanche</p>
+        <p><span id="spanBold">16:00</span> - Torneio de Vôlei</p>
+        <p><span id="spanBold">17:30</span> - Banho</p>
+        <p><span id="spanBold">18:30</span> - Orações na Capela</p>
+        <p><span id="spanBold">19:00</span> - Vésperas</p>
+        <p>
+          <span id="spanBold">19:30</span> - Dinâmica por Etapa Formativa:
+          Esponsalidade da Vocação
+        </p>
+        <p><span id="spanBold">21:30</span> - Completas</p>
+      </div>
+      <div class="card">
+        <h2>Quarta-Feira, dia <span id="numero">17</span></h2>
+        <p><span id="spanBold">07:00</span> - Laudes</p>
+        <p><span id="spanBold">07:30</span> - Santa Missa com Pe. Gleison</p>
+        <p><span id="spanBold">08:00</span> - Café da Manhã</p>
+        <p>
+          <span id="spanBold">08:30</span> - 1ª Conferência: Formar-se a Partir
+          das Sagradas Escrituras (Pe. Gleison)
+        </p>
+        <p><span id="spanBold">10:00</span> - Lanche</p>
+        <p>
+          <span id="spanBold">10:30</span> - 2ª Conferência: Unidade de Vida
+          (Pe. Gleison)
+        </p>
+        <p><span id="spanBold">12:00</span> - Intervalo</p>
+        <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
+        <p><span id="spanBold">12:50</span> - Almoço</p>
+        <p>
+          <span id="spanBold">14:30</span> - Lectio Divina e Escuta Partilhada
+          da Palavra de Deus (Pe. Pedro Santana)
+        </p>
+        <p><span id="spanBold">15:45</span> - Lanche</p>
+        <p><span id="spanBold">16:00</span> - Esporte</p>
+        <p><span id="spanBold">17:30</span> - Banho</p>
+        <p><span id="spanBold">18:30</span> - Orações na Capela</p>
+        <p><span id="spanBold">19:00</span> - Vésperas</p>
+        <p><span id="spanBold">20:00</span> - Festa Junina</p>
+      </div>
+      <div class="card">
+        <h2>Quinta-Feira, dia <span id="numero">18</span></h2>
+        <p><span id="spanBold">07:00</span> - Laudes</p>
+        <p>
+          <span id="spanBold">07:30</span> - Santa Missa com Pe. Fábio de
+          Freitas
+        </p>
+        <p><span id="spanBold">08:00</span> - Café da Manhã</p>
+        <p>
+          <span id="spanBold">08:30</span> - 1ª Conferência: A Sexualidade
+          Humana e seus Transtornos (Pe. Fábio de Freitas)
+        </p>
+        <p><span id="spanBold">10:00</span> - Lanche</p>
+        <p>
+          <span id="spanBold">10:30</span> - 2ª Conferência: Estilo de Vida como
+          Reflexo das Escolhas Diárias (Pe. Fábio de Freitas)
+        </p>
+        <p><span id="spanBold">12:00</span> - Intervalo</p>
+        <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
+        <p><span id="spanBold">12:50</span> - Almoço</p>
+        <p>
+          <span id="spanBold">14:30</span> - 3ª Conferência: Fatores para uma
+          Personalidade Equilibrada (Pe. Fábio de Freitas)
+        </p>
+        <p><span id="spanBold">15:45</span> - Lanche</p>
+        <p><span id="spanBold">16:00</span> - Torneio de Futsal</p>
+        <p><span id="spanBold">17:30</span> - Banho</p>
+        <p><span id="spanBold">18:30</span> - Orações na Capela</p>
+        <p><span id="spanBold">19:00</span> - Vésperas</p>
+        <p>
+          <span id="spanBold">20:00</span> - Dinâmica de Grupos: O Sacerdócio e
+          o Sentido da Vida
+        </p>
+        <p><span id="spanBold">21:30</span> - Completas</p>
+      </div>
+      <div class="card">
+        <h2>Sexta-Feira, dia <span id="numero">19</span></h2>
+        <p><span id="spanBold">07:00</span> - Laudes</p>
+        <p>
+          <span id="spanBold">07:30</span> - Santa Missa com Pe. Paulo César
+        </p>
+        <p><span id="spanBold">08:00</span> - Café da Manhã</p>
+        <p>
+          <span id="spanBold">08:30</span> - 1ª Conferência: A Virtude da
+          Prudência no Processo de Formação (Pe. Douglas)
+        </p>
+        <p><span id="spanBold">10:00</span> - Intervalo</p>
+        <p>
+          <span id="spanBold">10:30</span> - Preparação de Pequena Síntese
+          Pessoal
+        </p>
+        <p><span id="spanBold">11:00</span> - Trabalhos em Grupo</p>
+        <p><span id="spanBold">11:30</span> - Plenário</p>
+        <p><span id="spanBold">12:00</span> - Almoço de Confraternização</p>
       </div>
     </div>
     <div id="palestrantes" class="section-container">
       <h1 class="section-title">PALESTRANTES</h1>
 
       <div class="card">
-        <h2>Pe. João Silva</h2>
-        <p>Especialista em Teologia Moral</p>
+        <div id="cardContent">
+          <img src="./media/francisco.png" alt="" />
+          <h2>Papa Francisco</h2>
+        </div>
+        <p>Presente! Hoje e Sempre!</p>
       </div>
 
       <div class="card">
-        <h2>Pe. Pedro Santos</h2>
-        <p>Formador espiritual</p>
+        <h2>Pe. Hector Eugênio Velarde Arrieta</h2>
+        <p>Vigário da Paróquia São José - Itamarati</p>
+        <br />
+        <p>
+          Diretor Espiritual Adjunto do Seminário Diocesano Nossa Senhora do
+          Amor Divino
+        </p>
       </div>
     </div>
     <div id="material" class="section-container">
@@ -401,7 +575,11 @@
     const togglePalestra = document.getElementById("palestraBtn");
     const toggleMaterial = document.getElementById("materialBtn");
     const toggleInicio = document.getElementById("inicioBtn");
-    const homeBtn = document.getElementById("homeBtn");
+
+    const homeBtn = [
+      document.getElementById("homeBtn"),
+      document.getElementById("miniLogo"),
+    ];
 
     const inicio = document.getElementById("inicio");
     const programa = document.getElementById("programa");
@@ -415,31 +593,55 @@
       material.style.display = "none";
     }
 
-    togglePrograma.addEventListener("click", () => {
+    // Função para mostrar e salvar estado
+    function mostrarAba(aba) {
       esconderTudo();
-      programa.style.display = "block";
+
+      if (aba === "inicio") {
+        inicio.style.display = "flex";
+      } else if (aba === "programa") {
+        programa.style.display = "block";
+      } else if (aba === "palestrantes") {
+        palestrantes.style.display = "block";
+      } else if (aba === "material") {
+        material.style.display = "block";
+      }
+
+      // salva no navegador
+      localStorage.setItem("abaAtiva", aba);
+    }
+
+    // Eventos
+    togglePrograma.addEventListener("click", () => {
+      mostrarAba("programa");
     });
 
     togglePalestra.addEventListener("click", () => {
-      esconderTudo();
-      palestrantes.style.display = "block";
+      mostrarAba("palestrantes");
     });
 
     toggleMaterial.addEventListener("click", () => {
-      esconderTudo();
-      material.style.display = "block";
+      mostrarAba("material");
     });
 
-    homeBtn.addEventListener("click", () => {
-      esconderTudo();
-      inicio.style.display = "flex";
+    // 🔧 CORREÇÃO AQUI
+    homeBtn.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        mostrarAba("inicio");
+      });
     });
 
     toggleInicio.addEventListener("click", () => {
-      esconderTudo();
-      inicio.style.display = "flex";
+      mostrarAba("inicio");
     });
 
+    // Restaurar aba ao carregar a página
+    window.addEventListener("DOMContentLoaded", () => {
+      const abaSalva = localStorage.getItem("abaAtiva") || "inicio";
+      mostrarAba(abaSalva);
+    });
+
+    // Dropdown dos palestrantes
     const palestrantesCards = document.querySelectorAll(".palestrante");
 
     palestrantesCards.forEach((card) => {
