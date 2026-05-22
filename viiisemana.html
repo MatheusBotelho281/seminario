@@ -20,7 +20,7 @@
 
     /* parte que se move */
     ::-webkit-scrollbar-thumb {
-      background: #01a0fe;
+      background: #012d6d;
       border-radius: 0;
       transition: background 0.3s;
     }
@@ -29,34 +29,18 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #012d6d;
     }
-    @font-face {
-      font-family: "heading01";
-      src: url("./media/HeadingNowTrial-01Thin.ttf");
+    #list-menu {
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -1px;
+      padding: 1em 0 2em 0;
+      flex-direction: column;
     }
-    @font-face {
-      font-family: "heading61";
-      src: url("./media/HeadingNowTrial-61Thin.ttf");
-    }
-    @font-face {
-      font-family: "heading66";
-      src: url("./media/HeadingNowTrial-66Bold.ttf");
-    }
-
-    @media (max-width: 500px) {
-      #list-menu {
-        font-size: 1.2em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: -1px;
-        padding: 1em 0 2em 0;
-        gap: 0.2em !important;
-        flex-direction: column;
-      }
-      #inicio {
-        padding: 0 !important;
-        padding-bottom: 2em !important;
-      }
+    #inicio {
+      padding: 0 !important;
+      padding-bottom: 2em !important;
     }
     body {
       margin: 0;
@@ -72,9 +56,16 @@
       justify-content: center;
       align-items: center;
     }
+    #logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 90vw;
+    }
     #logo img {
       height: 15em;
       cursor: pointer;
+      z-index: 1;
     }
     #menu-container {
       width: 100%;
@@ -88,18 +79,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: row;
     }
     #list-menu {
-      background-color: #01a0fe;
+      background-color: #01a1fe;
+      background-size: 10em;
       display: flex;
       width: 100%;
       list-style: none;
-      gap: 2em;
       padding: 0;
       color: #012d6d;
       font-family: "heading66";
       text-transform: uppercase;
       justify-content: center;
+      flex-direction: row;
+      gap: 2em;
     }
     #list-menu a {
       cursor: pointer;
@@ -201,13 +195,85 @@
       font-family: "arial";
       font-weight: 100;
     }
+    #menor {
+      width: 12em;
+      height: auto !important;
+      z-index: 1;
+    }
+    #ondas1 {
+      position: absolute;
+      left: 0;
+      z-index: 0 !important;
+    }
+    #ondas2 {
+      position: absolute;
+      right: 0;
+      z-index: 0 !important;
+    }
+    #spanItalico {
+      font-style: italic;
+    }
+    #spanBold {
+      font-weight: bold;
+    }
+    #miniLogo {
+      display: none;
+    }
+    @font-face {
+      font-family: "heading01";
+      src: url("./media/HeadingNowTrial-01Thin.ttf");
+    }
+    @font-face {
+      font-family: "heading61";
+      src: url("./media/HeadingNowTrial-61Thin.ttf");
+    }
+    @font-face {
+      font-family: "heading66";
+      src: url("./media/HeadingNowTrial-66Bold.ttf");
+    }
+    @media (max-width: 1050px) {
+    }
+    @media (max-width: 830px) {
+      #menor {
+        display: none;
+      }
+      #homeBtn {
+        display: none;
+      }
+      #miniLogo {
+        display: block;
+        width: 20em;
+        height: auto !important;
+      }
+    }
+    @media (max-width: 630px) {
+      #list-menu {
+        font-size: 1.1em;
+        gap: 0.5em;
+        flex-direction: column !important;
+      }
+    }
+    @media (max-width: 500px) {
+      #menor {
+        width: 5em !important;
+      }
+      #homeBtn {
+        height: 6em !important;
+        margin: 1em 0;
+      }
+    }
   </style>
 
   <body>
     <div id="header-container">
       <div id="header">
         <div id="logo">
+          <img id="miniLogo" src="./media/minilogo.png" alt="" />
+          <img id="ondas1" src="./media/ondas1.png" alt="" />
+          <img id="ondas2" src="./media/ondas2.png" alt="" />
+          <img id="menor" src="./media/brasoes.png" alt="" />
           <img id="homeBtn" src="./media/Logo PNG.png" alt="" />
+          <img id="menor" src="./media/calendario.png" alt="" />
         </div>
       </div>
     </div>
@@ -224,25 +290,77 @@
     <div id="inicio">
       <h1>VIII Semana de Formação Humana</h1>
       <p>
-        Um tempo de crescimento, reflexão e formação, com especial atenção à
-        dimensão humana da formação. Nesta VIII edição, o tema central nos
-        convida a aprofundar: [coloque aqui o tema].<br />
+        <span id="spanItalico"
+          >Um tempo de crescimento, reflexão e formação, com especial atenção à
+          dimensão humana da formação. Nesta VIII edição, o tema central nos
+          convida a aprofundar:</span
+        >
         <br />
-        "Citação de um papa falando sobre o tema central." <br />
-        Papa ...
+        <br /><span
+          style="text-transform: uppercase; font-weight: 700; font-size: 1.2em"
+          >Formação Integral para uma Vida Sacerdotal Autêntica.</span
+        ><br />
+        <br />
+        Convidamos todos os seminaristas a se juntarem a nós nesta jornada de
+        crescimento e reflexão, onde exploraremos a importância de uma formação
+        que abranja todas as dimensões da vida sacerdotal. Acreditamos que a
+        formação humana é fundamental para o desenvolvimento de um sacerdote
+        autêntico, capaz de servir com amor e dedicação à sua vocação.
+        <br />
+        <br />
+        Temos por objetivo fortalecer a dimensão humana dos seminaristas,
+        desenvolvendo competências essenciais para uma vida sacerdotal
+        autêntica, com foco na formação integral da personalidade. Busca-se
+        promover a importância das escolhas cotidianas para uma vida
+        equilibrada, bem como a construção da identidade na configuração com
+        Cristo, cultivando o equilíbrio psíquico e uma consciência iluminada
+        pela fé, dando pleno sentido ao chamado de Deus.
+        <br />
+        <br />
+        <br />
+        <span id="spanBold"
+          >"Por isso, no que respeita às motivações, convido os seminaristas a
+          desenvolver trabalho interior que envolva todos os aspectos da
+          vida."</span
+        >
+        <br />
+        Papa Leão XIV -
+        <span id="spanItalico">Uma Fidelidade que Gera Futuro</span>
       </p>
-      <a href="https://chat.whatsapp.com/Jg18MTnDHo6CM1dkTNqMQZ"
+      <!--<a href="https://chat.whatsapp.com/Jg18MTnDHo6CM1dkTNqMQZ"
         ><button id="irPrograma">Entrar no Grupo de WhatsApp</button></a
       >
-      <img id="qrcode" src="./media/viii-qrcode.png" alt="" />
+      <img id="qrcode" src="./media/viii-qrcode.png" alt="" />!-->
+      <a href="https://forms.gle/ybzK3rRauXbN48uv8"
+        ><button id="irPrograma">Ficha de Cadastro</button></a
+      >
+      <img id="qrcode" src="./media/fichadecadastro.png" alt="" />
     </div>
     <div id="programa" class="section-container">
       <h1 class="section-title">PROGRAMAÇÃO</h1>
 
       <div class="card">
-        <h2>Dia <span id="numero">15</span></h2>
-        <p>08:00 - Abertura</p>
-        <p>09:00 - Palestra</p>
+        <h2>Segunda Feira, dia <span id="numero">15</span></h2>
+        <p>07:30 - Santa Missa com Dom Joel</p>
+        <p>08:30 - Café da Manhã</p>
+        <p>
+          09:00 - 1ª Conferência: O Princípio de Transcendência (Pe. Hector)
+        </p>
+        <p>10:30 - Lanche</p>
+        <p>11:00 - 2ª Conferência: Formação da Consciência (Pe. Anderson)</p>
+        <p>12:20 - Ofício e Hora Média</p>
+        <p>12:50 - Almoço</p>
+        <p>
+          14:30 - 3ª Conferência: Seminário como Escola de Vida Cristã (Pe. Luis
+          Carlos)
+        </p>
+        <p>15:45 - Lanche</p>
+        <p>16:00 - Torneio de Futebol</p>
+        <p>17:30 - Banho</p>
+        <p>18:00 - Orações na Capela</p>
+        <p>18:30 - Vésperas</p>
+        <p>19:30 - Fórum: O Mais Belo Ideal do Sacerdócio</p>
+        <p>21:30 - Completas</p>
       </div>
 
       <div class="card">
@@ -330,7 +448,5 @@
         content.classList.toggle("open");
       });
     });
-
-    
   </script>
 </html>
