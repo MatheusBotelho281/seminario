@@ -116,11 +116,16 @@
     }
     #palestrantes {
       display: none;
+      align-items: center;
+      justify-content: center;
     }
     #material {
       display: none;
     }
     .section-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding-bottom: 2em;
       background: linear-gradient(90deg, #012d6d, #01a0fe);
@@ -136,7 +141,7 @@
 
     .card {
       background: #002a4f;
-      margin: 1em;
+      margin: 1em 10em;
       padding: 1em;
       box-sizing: border-box;
     }
@@ -147,7 +152,7 @@
     }
 
     .card p {
-      margin: 0;
+      margin: 0.35em 0;
       color: white;
     }
     .card a {
@@ -276,6 +281,9 @@
       #header-container {
         height: 15.5em;
       }
+      .card {
+        margin: 1em;
+      }
     }
     @media (max-width: 630px) {
       #list-menu {
@@ -337,19 +345,16 @@
         </div>
       </div>
     </div>
-    <!--
     <div id="menu-container">
       <div id="menu">
-      <li id="list-menu">
-        <a id="inicioBtn">Início</a>
-        <a id="programaBtn">Programação</a>
-        <a id="palestraBtn">Palestrantes</a>
-        <a id="materialBtn">Material</a>
-      </li>
+        <lu id="list-menu">
+          <a id="inicioBtn">Início</a>
+          <a id="programaBtn">Programação</a>
+          <a id="palestraBtn">Palestrantes</a>
+          <a id="materialBtn">Material</a>
+        </lu>
       </div>
     </div>
-    </div>
-        -->
     <div id="inicio">
       <div id="inicioCorpo">
         <h1>VIII Semana de Formação Humana</h1>
@@ -413,7 +418,7 @@
 
       <div class="card">
         <h2>Segunda-Feira, dia <span id="numero">15</span></h2>
-        <p><span id="spanBold">07:30</span> - Santa Missa com Dom Joel</p>
+        <p><span id="spanBold">07:30</span> - Santa Missa (Dom Joel)</p>
         <p><span id="spanBold">08:30</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">09:00</span> - 1ª Conferência: O Princípio de
@@ -438,7 +443,8 @@
         <p><span id="spanBold">18:30</span> - Vésperas</p>
         <p>
           <span id="spanBold">19:30</span> - Fórum: O Mais Belo Ideal do
-          Sacerdócio
+          Sacerdócio (Cônego Luiz Carlos Carneiro, Monsenhor Vicente e Padre
+          Caio Cesar)
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
@@ -447,17 +453,17 @@
         <h2>Terça-Feira, dia <span id="numero">16</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Luis Carlos
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Luis Carlos)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: Desorientação de
-          Si: Reflexo na Vida Cotidiana ()
+          Si: Reflexo na Vida Cotidiana (Doutor José Augusto)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Desenvolvimento e
-          Maturidade da Personalidade ()
+          Maturidade da Personalidade (Doutor José Augusto)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
@@ -474,60 +480,70 @@
         <p>
           <span id="spanBold">19:30</span> - Dinâmica por Etapa Formativa:
           Esponsalidade da Vocação
+          <br />
+          <span id="spanBold">Grupo 1</span>: Configuração (Padre Hector)
+          <br />
+          <span id="spanBold">Grupo 2</span>: Discipulado (Padre Luis Carlos)
+          <br />
+          <span id="spanBold">Grupo 3</span>: Propedêutico - (Padre Kayo)
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
+
       <div class="card">
         <h2>Quarta-Feira, dia <span id="numero">17</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
-        <p><span id="spanBold">07:30</span> - Santa Missa com Pe. Gleison</p>
+        <p><span id="spanBold">07:30</span> - Santa Missa (Padre Gleison)</p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: Formar-se a Partir
-          das Sagradas Escrituras (Pe. Gleison)
+          das Sagradas Escrituras (Padre Gleison)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Unidade de Vida
-          (Pe. Gleison)
+          (Padre Gleison)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
         <p><span id="spanBold">12:50</span> - Almoço</p>
         <p>
           <span id="spanBold">14:30</span> - Lectio Divina e Escuta Partilhada
-          da Palavra de Deus (Pe. Pedro Santana)
+          da Palavra de Deus (Padre Pedro Santana)
         </p>
         <p><span id="spanBold">15:45</span> - Lanche</p>
         <p><span id="spanBold">16:00</span> - Esporte</p>
         <p><span id="spanBold">17:30</span> - Banho</p>
         <p><span id="spanBold">18:30</span> - Orações na Capela</p>
         <p><span id="spanBold">19:00</span> - Vésperas</p>
-        <p><span id="spanBold">20:00</span> - Festa Junina</p>
+        <p>
+          <span id="spanBold">20:00</span> - Festa Junina: Noite de Integração
+        </p>
       </div>
+
       <div class="card">
         <h2>Quinta-Feira, dia <span id="numero">18</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Fábio de
-          Freitas
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Fábio de
+          Freitas)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: A Sexualidade
-          Humana e seus Transtornos (Pe. Fábio de Freitas)
+          Humana e seus Transtornos (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Estilo de Vida como
-          Reflexo das Escolhas Diárias (Pe. Fábio de Freitas)
+          Reflexo das Escolhas Diárias (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
         <p><span id="spanBold">12:50</span> - Almoço</p>
         <p>
           <span id="spanBold">14:30</span> - 3ª Conferência: Fatores para uma
-          Personalidade Equilibrada (Pe. Fábio de Freitas)
+          Personalidade Equilibrada (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">15:45</span> - Lanche</p>
         <p><span id="spanBold">16:00</span> - Torneio de Futsal</p>
@@ -540,16 +556,17 @@
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
+
       <div class="card">
         <h2>Sexta-Feira, dia <span id="numero">19</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Paulo César
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Paulo César)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: A Virtude da
-          Prudência no Processo de Formação (Pe. Douglas)
+          Prudência no Processo de Formação (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">10:00</span> - Intervalo</p>
         <p>
@@ -566,14 +583,49 @@
 
       <div class="card">
         <div id="cardContent">
-          <img src="./media/francisco.png" alt="" />
-          <h2>Papa Francisco</h2>
+          <img src="./media/domjoel.png" alt="" />
+          <h2>Dom Joel Portella Amado</h2>
         </div>
-        <p>Presente! Hoje e Sempre!</p>
+        <p>.</p>
       </div>
 
       <div class="card">
-        <h2>Pe. Hector Eugênio Velarde Arrieta</h2>
+        <div id="cardContent">
+          <img src="./media/anderson.png" alt="" />
+          <h2>Padre Anderson Alves Rodrigues Machado</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/caiocesar.png" alt="" />
+          <h2>Padre Caio Cesar da Silva Freitas</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/fabio.png" alt="" />
+          <h2>Padre Fábio de Freitas Guimarães</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/gleison.png" alt="" />
+          <h2>Padre Gleison Lima da Silva</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/hector.png" alt="" />
+          <h2>Padre Hector Eugênio Velarde Arrieta</h2>
+        </div>
         <p>Vigário da Paróquia São José - Itamarati</p>
         <br />
         <p>
@@ -581,7 +633,72 @@
           Amor Divino
         </p>
       </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/joseaugusto.png" alt="" />
+          <h2>Doutor José Augusto Rento Cardes</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/kayo.png" alt="" />
+          <h2>Padre Kayo Baptista Carlos</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/luiscarlos.png" alt="" />
+          <h2>Padre Luis Carlos Zotesso</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/carneiro.png" alt="" />
+          <h2>Cônego Luiz Carlos César Ferreira Carneiro</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/paulocesar.png" alt="" />
+          <h2>Padre Paulo César Rodrigues Magalhães</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/pedro.png" alt="" />
+          <h2>Padre Pedro Henrique Pereira Santana</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/sandra.png" alt="" />
+          <h2>Doutora Sandra ...</h2>
+        </div>
+        <p>.</p>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/vicente.png" alt="" />
+          <h2>Monsenhor Vicente Ancona Lopez</h2>
+        </div>
+        <p>.</p>
+      </div>
     </div>
+
     <div id="material" class="section-container">
       <h1 class="section-title">MATERIAL</h1>
 
