@@ -116,11 +116,16 @@
     }
     #palestrantes {
       display: none;
+      align-items: center;
+      justify-content: center;
     }
     #material {
       display: none;
     }
     .section-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding-bottom: 2em;
       background: linear-gradient(90deg, #012d6d, #01a0fe);
@@ -136,7 +141,7 @@
 
     .card {
       background: #002a4f;
-      margin: 1em;
+      margin: 1em 10em;
       padding: 1em;
       box-sizing: border-box;
     }
@@ -147,7 +152,7 @@
     }
 
     .card p {
-      margin: 0;
+      margin: 0.35em 0;
       color: white;
     }
     .card a {
@@ -246,6 +251,13 @@
       align-items: center;
       justify-content: center;
     }
+    .card ul {
+      color: white;
+      font-size: 1.1em;
+    }
+    .card li {
+      margin: 0.35em 0;
+    }
 
     @font-face {
       font-family: "heading01";
@@ -276,6 +288,9 @@
       #header-container {
         height: 15.5em;
       }
+      .card {
+        margin: 1em;
+      }
     }
     @media (max-width: 630px) {
       #list-menu {
@@ -294,6 +309,12 @@
       }
       #inicio h1 {
         font-size: 2em;
+      }
+      .card ul {
+        font-size: 1.5em;
+      }
+      .card li {
+        margin: 0.6em 0;
       }
     }
     @media (max-width: 500px) {
@@ -329,27 +350,44 @@
       <div id="header">
         <div id="logo">
           <img id="miniLogo" src="./media/minilogo.png" alt="" />
-          <img id="ondas1" src="./media/ondas1.png" alt="" />
-          <img id="ondas2" src="./media/ondas2.png" alt="" />
-          <img id="menor" src="./media/brasoes.png" alt="" />
+          <img
+            style="cursor: default"
+            id="ondas1"
+            src="./media/ondas1.png"
+            alt=""
+          />
+          <img
+            style="cursor: default"
+            id="ondas2"
+            src="./media/ondas2.png"
+            alt=""
+          />
+          <img
+            style="cursor: default"
+            id="menor"
+            src="./media/brasoes.png"
+            alt=""
+          />
           <img id="homeBtn" src="./media/Logo PNG.png" alt="" />
-          <img id="menor" src="./media/calendario.png" alt="" />
+          <img
+            style="cursor: default"
+            id="menor"
+            src="./media/calendario.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
-    <!--
     <div id="menu-container">
       <div id="menu">
-      <li id="list-menu">
-        <a id="inicioBtn">Início</a>
-        <a id="programaBtn">Programação</a>
-        <a id="palestraBtn">Palestrantes</a>
-        <a id="materialBtn">Material</a>
-      </li>
+        <lu id="list-menu">
+          <a id="inicioBtn">Início</a>
+          <a id="programaBtn">Programação</a>
+          <a id="palestraBtn">Palestrantes</a>
+          <a id="materialBtn">Material</a>
+        </lu>
       </div>
     </div>
-    </div>
-        -->
     <div id="inicio">
       <div id="inicioCorpo">
         <h1>VIII Semana de Formação Humana</h1>
@@ -400,7 +438,7 @@
           ><button id="irPrograma">Entrar no Grupo de WhatsApp</button></a
         >
         <img id="qrcode" src="./media/viii-qrcode.png" alt="" />!-->
-        <a href="https://forms.gle/ybzK3rRauXbN48uv8"
+        <a href="https://forms.gle/WrGYY6GaWshTLgdg6"
           ><button id="irPrograma">Ficha de Cadastro</button></a
         >
         <button id="shareBtn">Compartilhar</button>
@@ -413,7 +451,7 @@
 
       <div class="card">
         <h2>Segunda-Feira, dia <span id="numero">15</span></h2>
-        <p><span id="spanBold">07:30</span> - Santa Missa com Dom Joel</p>
+        <p><span id="spanBold">07:30</span> - Santa Missa (Dom Joel)</p>
         <p><span id="spanBold">08:30</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">09:00</span> - 1ª Conferência: O Princípio de
@@ -438,7 +476,8 @@
         <p><span id="spanBold">18:30</span> - Vésperas</p>
         <p>
           <span id="spanBold">19:30</span> - Fórum: O Mais Belo Ideal do
-          Sacerdócio
+          Sacerdócio (Cônego Luiz Carlos Carneiro, Monsenhor Vicente e Padre
+          Caio Cesar)
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
@@ -447,17 +486,17 @@
         <h2>Terça-Feira, dia <span id="numero">16</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Luis Carlos
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Luis Carlos)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: Desorientação de
-          Si: Reflexo na Vida Cotidiana ()
+          Si: Reflexo na Vida Cotidiana (Doutor José Augusto)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Desenvolvimento e
-          Maturidade da Personalidade ()
+          Maturidade da Personalidade (Doutor José Augusto)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
@@ -474,60 +513,70 @@
         <p>
           <span id="spanBold">19:30</span> - Dinâmica por Etapa Formativa:
           Esponsalidade da Vocação
+          <br />
+          <span id="spanBold">Grupo 1</span>: Configuração (Padre Hector)
+          <br />
+          <span id="spanBold">Grupo 2</span>: Discipulado (Padre Luis Carlos)
+          <br />
+          <span id="spanBold">Grupo 3</span>: Propedêutico - (Padre Kayo)
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
+
       <div class="card">
         <h2>Quarta-Feira, dia <span id="numero">17</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
-        <p><span id="spanBold">07:30</span> - Santa Missa com Pe. Gleison</p>
+        <p><span id="spanBold">07:30</span> - Santa Missa (Padre Gleison)</p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: Formar-se a Partir
-          das Sagradas Escrituras (Pe. Gleison)
+          das Sagradas Escrituras (Padre Gleison)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Unidade de Vida
-          (Pe. Gleison)
+          (Padre Gleison)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
         <p><span id="spanBold">12:50</span> - Almoço</p>
         <p>
           <span id="spanBold">14:30</span> - Lectio Divina e Escuta Partilhada
-          da Palavra de Deus (Pe. Pedro Santana)
+          da Palavra de Deus (Padre Pedro Santana)
         </p>
         <p><span id="spanBold">15:45</span> - Lanche</p>
         <p><span id="spanBold">16:00</span> - Esporte</p>
         <p><span id="spanBold">17:30</span> - Banho</p>
         <p><span id="spanBold">18:30</span> - Orações na Capela</p>
         <p><span id="spanBold">19:00</span> - Vésperas</p>
-        <p><span id="spanBold">20:00</span> - Festa Junina</p>
+        <p>
+          <span id="spanBold">20:00</span> - Festa Junina: Noite de Integração
+        </p>
       </div>
+
       <div class="card">
         <h2>Quinta-Feira, dia <span id="numero">18</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Fábio de
-          Freitas
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Fábio de
+          Freitas)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: A Sexualidade
-          Humana e seus Transtornos (Pe. Fábio de Freitas)
+          Humana e seus Transtornos (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">10:00</span> - Lanche</p>
         <p>
           <span id="spanBold">10:30</span> - 2ª Conferência: Estilo de Vida como
-          Reflexo das Escolhas Diárias (Pe. Fábio de Freitas)
+          Reflexo das Escolhas Diárias (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">12:00</span> - Intervalo</p>
         <p><span id="spanBold">12:20</span> - Ofício e Hora Média</p>
         <p><span id="spanBold">12:50</span> - Almoço</p>
         <p>
           <span id="spanBold">14:30</span> - 3ª Conferência: Fatores para uma
-          Personalidade Equilibrada (Pe. Fábio de Freitas)
+          Personalidade Equilibrada (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">15:45</span> - Lanche</p>
         <p><span id="spanBold">16:00</span> - Torneio de Futsal</p>
@@ -540,16 +589,17 @@
         </p>
         <p><span id="spanBold">21:30</span> - Completas</p>
       </div>
+
       <div class="card">
         <h2>Sexta-Feira, dia <span id="numero">19</span></h2>
         <p><span id="spanBold">07:00</span> - Laudes</p>
         <p>
-          <span id="spanBold">07:30</span> - Santa Missa com Pe. Paulo César
+          <span id="spanBold">07:30</span> - Santa Missa (Padre Paulo César)
         </p>
         <p><span id="spanBold">08:00</span> - Café da Manhã</p>
         <p>
           <span id="spanBold">08:30</span> - 1ª Conferência: A Virtude da
-          Prudência no Processo de Formação (Pe. Douglas)
+          Prudência no Processo de Formação (Padre Fábio de Freitas)
         </p>
         <p><span id="spanBold">10:00</span> - Intervalo</p>
         <p>
@@ -566,22 +616,266 @@
 
       <div class="card">
         <div id="cardContent">
-          <img src="./media/francisco.png" alt="" />
-          <h2>Papa Francisco</h2>
+          <img src="./media/domjoel.png" alt="" />
+          <h2>Dom Joel Portella Amado</h2>
         </div>
-        <p>Presente! Hoje e Sempre!</p>
+        <ul>
+          <li>Ordenação Presbiteral: 1982</li>
+          <li>Ordenação Episcopal: 2017</li>
+          <li>Bispo da Diocese de Petrópolis (desde 2024)</li>
+          <li>Doutor em Teologia (PUC-RJ)</li>
+          <li>Formação em Filosofia e Direito (UERJ)</li>
+          <li>Lecionou da PUC-RJ</li>
+          <li>Secretário-Geral da CNBB (2019)</li>
+          <li>
+            Presidente da Comissão para a Doutrina da Fé da CNBB (2023–2027)
+          </li>
+          <li>Membro do CELAM e da Academia Luso-Brasileira de Letras</li>
+        </ul>
       </div>
 
       <div class="card">
-        <h2>Pe. Hector Eugênio Velarde Arrieta</h2>
-        <p>Vigário da Paróquia São José - Itamarati</p>
-        <br />
-        <p>
-          Diretor Espiritual Adjunto do Seminário Diocesano Nossa Senhora do
-          Amor Divino
-        </p>
+        <div id="cardContent">
+          <img src="./media/anderson.png" alt="" />
+          <h2>Padre Anderson Alves Rodrigues Machado</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2008</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>
+            Vugário Paroquial na Paróquia Nossa Senhora de Lourdes - Araras
+          </li>
+          <li>Doutor em Filosofia (Santa Croce – Roma)</li>
+          <li>Pós-doutor em Educação (UCP)</li>
+          <li>Mestrado em Teologia Moral</li>
+          <li>Professor da UCP (graduação e pós)</li>
+          <li>Coordenador do curso de Filosofia da UCP</li>
+          <li>
+            Prefeito de Estudos do Seminário Diocesano Nossa Senhora do Amor
+            Divino
+          </li>
+          <li>
+            Diretor Espiritual Residente do Seminário Diocesano Nossa Senhora do
+            Amor Divino
+          </li>
+          <li>
+            Áreas: Metafísica, Epistemologia, Educação, Filosofia da Ciência
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/caiocesar.png" alt="" />
+          <h2>Padre Caio Cesar da Silva Freitas</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2025</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>Vigário Paroquial na Paróquia Santa Rita de Cássia - Meudon</li>
+          <li>Bacharel em Filosofia e Teologia (UCP)</li>
+          <li>Coordenador Diocesano da Catequese</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/fabio.png" alt="" />
+          <h2>Padre Fábio de Freitas Guimarães</h2>
+        </div>
+        <ul>
+          <li>Ordenação Prebiteral: 2005</li>
+          <li>Presbitero da Arquidiocese de São Sebastião do Rio de Janeiro</li>
+          <li>Pároco na Paróquia São Francisco de Assis - Campo Grande</li>
+          <li>
+            Capelão das Religiosas do Instituto Nossa Senhora do Rogate - Preça
+            Seca
+          </li>
+          <li>Exorcista pelo Vicariato Episcopal Anchieta</li>
+          <li>Doutor em Psicologia (Gregoriana – 2024)</li>
+          <li>Mestre e graduado em Psicologia</li>
+          <li>Formação em Filosofia e Teologia</li>
+          <li>Atuação em saúde mental e psicologia pastoral</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/gleison.png" alt="" />
+          <h2>Padre Gleison Lima da Silva</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2011</li>
+          <li>Presbítero da Diocese de Nova Friburgo</li>
+          <li>Pároco na Paróquia Santo Antônio - Macaé</li>
+          <li>Administrador paroquial em múltiplas comunidades</li>
+          <li>Assessor da Pastoral do Dízimo</li>
+          <li>Membro do Conselho Presbiteral</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/hector.png" alt="" />
+          <h2>Padre Hector Eugênio Velarde Arrieta</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 1987</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>Vigário Padroquial na Paróquia São José - Itamarati</li>
+          <li>
+            Diretor Espiritual Adjunto do Seminário Nossa Senhora do Amor Divino
+          </li>
+          <li>Licenciatura em Teologia Espiritual (Gregoriana - Roma)</li>
+          <li>Cursos de Formação - (Gregoriana - Roma)</li>
+          <li>Formação Espiritual de Inspiração Inaciana</li>
+          <li>Diretor de Exercícios Espirituais e Acompanhamento Espiritual</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/joseaugusto.png" alt="" />
+          <h2>Doutor José Augusto Rento Cardoso</h2>
+        </div>
+        <ul>
+          <li>Graduado em Psicologia</li>
+          <li>Mestre em História e Filosofia da Psicologia</li>
+          <li>Pós em Psicologia Positiva</li>
+          <li>Especialista em Logoterapia</li>
+          <li>Psicologia clínica e jurídica</li>
+          <li>Coordenador do Projeto Reconciliatio</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/kayo.png" alt="" />
+          <h2>Padre Kayo Baptista Carlos</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2021</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>Administrador Paroquial na Paróquia São Sebastião - Indaiá</li>
+          <li>Bacharel em Filosofia e Teologia (UCP)</li>
+          <li>Coordenador do Setor Juventude da Diocese de Petrópolis</li>
+          <li>
+            Professor de Inglês do Seminário Diocesano Nossa Senhora do Amor
+            Divino
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/luiscarlos.png" alt="" />
+          <h2>Padre Luis Carlos Zotesso</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2015</li>
+          <li>Presbítero da Diocese de Itaguaí</li>
+          <li>Pároco na Paróquia Nossa Senhora dos Remédios - Paraty</li>
+          <li>Mestre em Psicologia (Logoterapia – Suíça)</li>
+          <li>Formação em Filosofia e Teologia</li>
+          <li>Ex-monge Camaldulense</li>
+          <li>Missionário na Diocese de Itaguaí</li>
+          <li>
+            Reitor de Seminário Sagrado Coração de Jesus - Diocese de
+            Itaguaí(desde 2019)
+          </li>
+          <li>Membro do Conselho de Presbíteros</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/carneiro.png" alt="" />
+          <h2>Cônego Luiz Carlos César Ferreira Carneiro</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 1986</li>
+          <li>Presbítero da Arquidiocese de Mariana</li>
+          <li>Pároco na Paróquia São Sebastião - Barbacena</li>
+          <li>Atuação na Arquidiocese de Mariana</li>
+          <li>Ecônomo arquidiocesano por 11 anos</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/paulocesar.png" alt="" />
+          <h2>Padre Paulo César Rodrigues Magalhães</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 1994</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>Pároco na Paróquia Nossa Senhora Aparecida - Piabetá</li>
+          <li>Vigário Geral da Diocese de Petrópolis</li>
+          <li>Moderador da Cúria Diocesana</li>
+          <li>Presidente das Faculdades Católicas</li>
+          <li>Membro de diversos conselhos diocesanos</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/pedro.png" alt="" />
+          <h2>Padre Pedro Henrique Pereira Santana</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 2022</li>
+          <li>Presbítero da Diocese de Petrópolis</li>
+          <li>
+            Vice-Reitor do Seminário Diocesano Nossa Senhora do Amor Divino
+          </li>
+          <li>Diretor de Educandário Nossa Senhora do Amor Divino</li>
+          <li>Coordenador Diocesano de Liturgia</li>
+          <li>Cerimoniário da Diocese</li>
+          <li>Bacharel em Filosofia e Teologia (UCP)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/sandra.png" alt="" />
+          <h2>Doutora Sandra Cristina Plácido Hansen</h2>
+        </div>
+        <ul>
+          <li>Psicóloga formada desde 1994</li>
+          <li>Atuação na Psicologia Clínica e Institucional</li>
+          <li>Formação em Gestalt-terapia</li>
+          <li>Formação em Logoterapia (SOBRAL e PUC–Curitiba)</li>
+          <li>Especialização em Terapia Cognitivo-Comportamental (TCC)</li>
+          <li>Enfoque na terceira idade</li>
+          <li>
+            Mais de 25 anos de experiência no acompanhamento de seminaristas,
+            padres e religiosos
+          </li>
+          <li>Atuação no desenvolvimento humano e amadurecimento emocional</li>
+          <li>Palestrante e conferencista</li>
+          <li>Temas: saúde emocional e sentido da vida</li>
+          <li>
+            Trabalho baseado na escuta qualificada e promoção da saúde psíquica
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div id="cardContent">
+          <img src="./media/vicente.png" alt="" />
+          <h2>Monsenhor Vicente Ancona Lopez</h2>
+        </div>
+        <ul>
+          <li>Ordenação Presbiteral: 1975</li>
+          <li>
+            Doutor em Teologia e Pedagogia (Universidade de Navarra - Espanha)
+          </li>
+          <li>Vigário Regional do Opus Dei no Brasil (1994-2024)</li>
+          <li>Conviveu com o fundador do Opus Dei em Roma</li>
+        </ul>
       </div>
     </div>
+
     <div id="material" class="section-container">
       <h1 class="section-title">MATERIAL</h1>
 
