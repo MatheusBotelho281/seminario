@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Envio de Arquivos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Envio de Arquivos</h1>
+    <p class="subtitulo">Arraste um arquivo para a área abaixo, ou clique para escolher.</p>
+
+    <div id="area-upload" class="area-upload">
+        <p id="texto-area">📁 Solte o arquivo aqui ou clique para selecionar</p>
+        <input type="file" id="input-arquivo" hidden>
+    </div>
+
+    <div id="barra-progresso-container" class="barra-progresso-container" hidden>
+        <div id="barra-progresso" class="barra-progresso"></div>
+    </div>
+
+    <div id="mensagem" class="mensagem" hidden></div>
+
+    <h2>Arquivos já enviados</h2>
+    <button id="btn-atualizar" class="btn-secundario">🔄 Atualizar lista</button>
+
+    <table class="tabela-arquivos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tamanho</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+            <tr><td colspan="3">Carregando...</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
