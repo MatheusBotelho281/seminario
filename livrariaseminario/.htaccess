@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^database/ - [F,L]
+RewriteRule ^config/ - [F,L]
+RewriteRule ^includes/ - [F,L]
+<FilesMatch "\.(sqlite|sqlite3|db|log|ini)$">
+    Require all denied
+</FilesMatch>

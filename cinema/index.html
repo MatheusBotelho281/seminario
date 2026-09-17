@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Amor Divino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0f111a;
+    --bg-raised: #171a26;
+    --bg-raised-2: #1f2333;
+    --line: rgba(237,232,224,0.10);
+    --line-strong: rgba(237,232,224,0.20);
+    --text: #ede8e0;
+    --text-muted: #9aa1b4;
+    --gold: #e3b23c;
+    --red: #c1483a;
+    --green: #6fae8f;
+    --radius: 6px;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+
+  body{
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(227,178,60,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 0%, rgba(193,72,58,0.08), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  a{ color: var(--gold); }
+
+  button{ font-family: var(--sans); cursor: pointer; }
+
+  button:focus-visible,
+  input:focus-visible,
+  a:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .app{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 20px 90px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+
+  .hero h1{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em{ font-style: italic; color: var(--gold); }
+
+  .hero p.hero-sub{
+    max-width: 46ch;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin: 0;
+  }
+
+  /* ---------- Generic inputs ---------- */
+
+  input[type="text"],
+  input[type="number"]{
+    background: var(--bg-raised-2);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    padding: 11px 13px;
+    border-radius: var(--radius);
+    font-size: 0.96rem;
+    font-family: var(--sans);
+  }
+  input::placeholder{ color: var(--text-muted); }
+
+  .btn{
+    background: var(--gold);
+    color: #1a1305;
+    border: none;
+    padding: 11px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.96rem;
+    white-space: nowrap;
+  }
+  .btn:hover{ background: #edc158; }
+  .btn:disabled{
+    background: #7a6531;
+    color: rgba(0,0,0,0.4);
+    cursor: not-allowed;
+  }
+  .btn.btn-secondary{
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+  }
+  .btn.btn-secondary:hover{ border-color: var(--gold); color: var(--gold); }
+
+  /* ---------- Sections ---------- */
+
+  section{ margin-bottom: 48px; }
+
+  section h2{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 16px;
+  }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-head h2{ margin: 0; }
+  .count-badge{
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- Search ---------- */
+
+  #searchForm{ display: flex; gap: 10px; }
+  #searchInput{ flex: 1; min-width: 0; }
+
+  .results-list{
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-row{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+  }
+  .result-row img{
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 3px;
+    background: var(--bg-raised-2);
+    flex-shrink: 0;
+  }
+  .result-info{ flex: 1; min-width: 0; }
+  .result-info .title{
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .result-info .meta{ font-size: 0.82rem; color: var(--text-muted); }
+  .result-row .btn{ padding: 7px 14px; font-size: 0.85rem; flex-shrink: 0; }
+
+  .empty-state{
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding: 18px;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .status-msg{
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+  }
+  .status-msg.err{ background: rgba(193,72,58,0.15); color: #e58c80; }
+  .status-msg.info{ color: var(--text-muted); }
+
+  /* ---------- Ticket cards (suggestions) ---------- */
+
+  .ticket-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .ticket{
+    position: relative;
+    display: flex;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .ticket .poster{ width: 78px; flex-shrink: 0; background: var(--bg-raised-2); }
+  .ticket .poster img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .ticket .stub-edge{
+    width: 0;
+    border-left: 2px dashed var(--line-strong);
+    position: relative;
+  }
+  .ticket .stub-edge::before,
+  .ticket .stub-edge::after{
+    content: "";
+    position: absolute;
+    left: -7px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg);
+    border-radius: 50%;
+  }
+  .ticket .stub-edge::before{ top: -7px; }
+  .ticket .stub-edge::after{ bottom: -7px; }
+
+  .ticket .details{
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ticket .details .title{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.02rem;
+    line-height: 1.25;
+  }
+
+  .badge-row{ display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge{
+    font-size: 0.76rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    border: 1px solid var(--line-strong);
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .badge.rating{ color: var(--gold); border-color: rgba(227,178,60,0.35); }
+  .badge.age{ color: var(--text); border-color: var(--line-strong); }
+
+  .ticket .actions{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trailer-link{
+    font-size: 0.82rem;
+    text-decoration: none;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .trailer-link:hover{ text-decoration: underline; }
+  .remove-btn{
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1;
+    padding: 2px 4px;
+  }
+  .remove-btn:hover{ color: var(--red); }
+
+  /* ---------- Draw section ---------- */
+
+  .draw-controls{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .draw-controls .field label{
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  #drawCount{ width: 90px; }
+
+  #drawArea{ margin-top: 22px; }
+
+  .draw-note{ font-size: 0.85rem; color: var(--text-muted); margin: 10px 0 0; }
+
+  .vote-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .vote-card{
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .vote-card.winner{
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold) inset;
+  }
+  .vote-card .winner-tag{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: var(--gold);
+    color: #1a1305;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .vote-card .vc-top{ display: flex; gap: 10px; }
+  .vote-card .vc-top img{
+    width: 54px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 3px;
+    background: var(--bg-raised-2);
+    flex-shrink: 0;
+  }
+  .vote-card .vc-title{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+  .vote-card .vote-count{
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: var(--serif);
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .vote-card .vote-count .unit{
+    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 4px;
+  }
+  .vote-card .vote-btn{ width: 100%; }
+
+  .draw-actions{ display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .voted-tag{ font-size: 0.82rem; color: var(--green); }
+
+  footer.app-footer{
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 600px){
+    .app{ padding: 28px 16px 70px; }
+    .ticket-grid{ grid-template-columns: 1fr; }
+    .vote-grid{ grid-template-columns: 1fr; }
+    #searchForm{ flex-direction: column; }
+    .draw-controls{ flex-direction: column; align-items: stretch; }
+    #drawCount{ width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <header class="hero">
+    <h1>Cinema <em>Amor Divino</em></h1>
+    <p class="hero-sub">Cada um sugere um filme. Quando a lista estiver pronta, sorteie quantos títulos quiser — eles saem da lista e ficam só na votação da vez.</p>
+  </header>
+
+  <section class="search-section">
+    <h2>Sugerir um filme</h2>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Digite o nome do filme" autocomplete="off">
+      <button type="submit" class="btn">Buscar</button>
+    </form>
+    <div id="searchStatus"></div>
+    <ul class="results-list" id="searchResults"></ul>
+  </section>
+
+  <section class="suggestions-section">
+    <div class="section-head">
+      <h2>Filmes sugeridos</h2>
+      <span class="count-badge" id="suggestionCount">0</span>
+    </div>
+    <div id="suggestionsGrid" class="ticket-grid"></div>
+    <p class="empty-state" id="emptySuggestions">Nenhum filme sugerido ainda. Busque acima para começar.</p>
+  </section>
+
+  <section class="draw-section">
+    <h2>Sorteio da votação</h2>
+    <div class="draw-controls">
+      <div class="field">
+        <label for="drawCount">Quantos filmes sortear?</label>
+        <input type="number" id="drawCount" min="1" value="3">
+      </div>
+      <button type="button" class="btn" id="drawBtn">Sortear</button>
+    </div>
+    <p class="draw-note" id="drawNote"></p>
+    <div id="drawArea"></div>
+  </section>
+
+  <footer class="app-footer">
+    As sugestões e os votos ficam salvos no servidor (arquivos JSON em <code>api/data/</code>), então qualquer pessoa que abrir esta página vê a mesma lista e a mesma votação. Cada navegador só pode votar uma vez por rodada.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var API_BASE = "api";
+  var VOTER_KEY = "sessaoDaSorte.voterId";
+  var POLL_MS = 6000;
+
+  var state = { suggestions: [], draw: null };
+
+  function getVoterId(){
+    var id = localStorage.getItem(VOTER_KEY);
+    if(!id){
+      id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ("v-" + Math.random().toString(36).slice(2) + Date.now());
+      localStorage.setItem(VOTER_KEY, id);
+    }
+    return id;
+  }
+  var voterId = getVoterId();
+
+  function escapeHtml(str){
+    return String(str || "").replace(/[&<>"']/g, function(c){
+      return { "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" }[c];
+    });
+  }
+
+  function api(path, options){
+    return fetch(API_BASE + path, options).then(function(res){
+      return res.json().then(function(body){
+        if(!res.ok){
+          var err = new Error(body.error || ("Erro " + res.status));
+          err.status = res.status;
+          throw err;
+        }
+        return body;
+      });
+    });
+  }
+
+  // ---------- DOM refs ----------
+
+  var searchForm = document.getElementById("searchForm");
+  var searchInput = document.getElementById("searchInput");
+  var searchResults = document.getElementById("searchResults");
+  var searchStatus = document.getElementById("searchStatus");
+
+  var suggestionsGrid = document.getElementById("suggestionsGrid");
+  var emptySuggestions = document.getElementById("emptySuggestions");
+  var suggestionCount = document.getElementById("suggestionCount");
+
+  var drawCountInput = document.getElementById("drawCount");
+  var drawBtn = document.getElementById("drawBtn");
+  var drawNote = document.getElementById("drawNote");
+  var drawArea = document.getElementById("drawArea");
+
+  // ---------- search ----------
+
+  searchForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = searchInput.value.trim();
+    if(!q) return;
+
+    searchStatus.innerHTML = '<p class="status-msg info">Buscando...</p>';
+    searchResults.innerHTML = "";
+
+    api("/search.php?query=" + encodeURIComponent(q)).then(function(data){
+      searchStatus.innerHTML = "";
+      if(!data.results || !data.results.length){
+        searchStatus.innerHTML = '<p class="status-msg info">Nenhum filme encontrado para "' + escapeHtml(q) + '".</p>';
+        return;
+      }
+      renderResults(data.results);
+    }).catch(function(err){
+      searchStatus.innerHTML = '<p class="status-msg err">Não foi possível buscar: ' + escapeHtml(err.message) + '</p>';
+    });
+  });
+
+  function renderResults(results){
+    searchResults.innerHTML = results.map(function(movie){
+      var rating = movie.rating != null ? movie.rating.toFixed(1) : "—";
+      return (
+        '<li class="result-row" data-id="' + movie.id + '">' +
+          (movie.poster ? '<img src="' + movie.poster + '" alt="">' : '<img src="" alt="" style="visibility:hidden">') +
+          '<div class="result-info">' +
+            '<div class="title">' + escapeHtml(movie.title) + '</div>' +
+            '<div class="meta">' + movie.year + ' · ⭐ ' + rating + '</div>' +
+          '</div>' +
+          '<button type="button" class="btn btn-secondary add-btn">Adicionar</button>' +
+        '</li>'
+      );
+    }).join("");
+
+    Array.prototype.forEach.call(searchResults.querySelectorAll(".result-row"), function(row){
+      var id = Number(row.getAttribute("data-id"));
+      var movie = results.find(function(m){ return m.id === id; });
+      var btn = row.querySelector(".add-btn");
+      btn.addEventListener("click", function(){
+        btn.disabled = true;
+        btn.textContent = "Adicionando...";
+        addSuggestion(movie).then(function(){
+          btn.textContent = "Adicionado ✓";
+        }).catch(function(err){
+          btn.disabled = false;
+          btn.textContent = "Adicionar";
+          searchStatus.innerHTML = '<p class="status-msg err">' + escapeHtml(err.message) + '</p>';
+        });
+      });
+    });
+  }
+
+  // ---------- suggestions ----------
+
+  function loadSuggestions(){
+    return api("/suggestions.php").then(function(data){
+      state.suggestions = data.suggestions || [];
+      renderSuggestions();
+    });
+  }
+
+  function addSuggestion(movie){
+    return api("/suggestions.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: movie.id,
+        title: movie.title,
+        year: movie.year,
+        rating: movie.rating,
+        poster: movie.poster
+      })
+    }).then(function(){
+      return loadSuggestions();
+    });
+  }
+
+  function removeSuggestion(id){
+    api("/suggestions.php?id=" + id, { method: "DELETE" }).then(function(){
+      loadSuggestions();
+    });
+  }
+
+  function renderSuggestions(){
+    suggestionCount.textContent = state.suggestions.length;
+    emptySuggestions.style.display = state.suggestions.length ? "none" : "block";
+
+    suggestionsGrid.innerHTML = state.suggestions.map(function(s){
+      var ratingBadge = s.rating != null ? '<span class="badge rating">⭐ ' + Number(s.rating).toFixed(1) + '</span>' : "";
+      var ageBadge = s.age ? '<span class="badge age">' + escapeHtml(s.age) + '</span>' : '<span class="badge age">faixa etária não informada</span>';
+
+      var trailerLink;
+      if(s.trailer){
+        trailerLink = '<a class="trailer-link" href="' + s.trailer + '" target="_blank" rel="noopener">▶ Assistir trailer</a>';
+      } else {
+        var q = encodeURIComponent(s.title + " trailer oficial");
+        trailerLink = '<a class="trailer-link" href="https://www.youtube.com/results?search_query=' + q + '" target="_blank" rel="noopener">▶ Buscar trailer</a>';
+      }
+
+      return (
+        '<div class="ticket" data-id="' + s.id + '">' +
+          '<div class="poster">' + (s.poster ? '<img src="' + s.poster + '" alt="">' : '') + '</div>' +
+          '<div class="stub-edge"></div>' +
+          '<div class="details">' +
+            '<div class="title">' + escapeHtml(s.title) + ' <span style="color:var(--text-muted); font-weight:400; font-size:0.85rem;">(' + s.year + ')</span></div>' +
+            '<div class="badge-row">' + ratingBadge + ageBadge + '</div>' +
+            '<div class="actions">' + trailerLink + '<button type="button" class="remove-btn" aria-label="Remover">✕</button></div>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    Array.prototype.forEach.call(suggestionsGrid.querySelectorAll(".ticket"), function(card){
+      var id = Number(card.getAttribute("data-id"));
+      card.querySelector(".remove-btn").addEventListener("click", function(){
+        removeSuggestion(id);
+      });
+    });
+  }
+
+  // ---------- draw / voting ----------
+
+  function loadDraw(){
+    return api("/draw.php").then(function(data){
+      state.draw = data.draw;
+      renderDraw();
+    });
+  }
+
+  drawBtn.addEventListener("click", function(){
+    var x = parseInt(drawCountInput.value, 10);
+    if(!x || x < 1){
+      drawNote.textContent = "Informe um número de filmes maior que zero.";
+      return;
+    }
+    drawNote.textContent = "";
+    drawBtn.disabled = true;
+
+    api("/draw.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "draw", count: x })
+    }).then(function(data){
+      state.draw = data.draw;
+      renderDraw();
+      loadSuggestions();
+    }).catch(function(err){
+      drawNote.textContent = err.message;
+    }).finally(function(){
+      drawBtn.disabled = false;
+    });
+  });
+
+  function castVote(id){
+    api("/draw.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "vote", movieId: id, voterId: voterId })
+    }).then(function(data){
+      state.draw = data.draw;
+      renderDraw();
+    }).catch(function(err){
+      drawNote.textContent = err.message;
+      loadDraw();
+    });
+  }
+
+  function closeVoting(){
+    api("/draw.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "close" })
+    }).then(function(data){
+      state.draw = data.draw;
+      renderDraw();
+    });
+  }
+
+  function newRound(){
+    api("/draw.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "newRound" })
+    }).then(function(data){
+      state.draw = data.draw;
+      renderDraw();
+    });
+  }
+
+  function renderDraw(){
+    if(!state.draw){
+      drawArea.innerHTML = "";
+      return;
+    }
+
+    var d = state.draw;
+    var voteValues = Object.keys(d.votes).map(function(k){ return d.votes[k]; });
+    var maxVotes = voteValues.length ? Math.max.apply(null, voteValues) : 0;
+    var hasVotes = maxVotes > 0;
+    var alreadyVoted = d.voters.indexOf(voterId) !== -1;
+
+    var cards = d.movies.map(function(m){
+      var count = d.votes[m.id] || 0;
+      var isWinner = d.closed && hasVotes && count === maxVotes;
+      var ratingBadge = m.rating != null ? '<span class="badge rating">⭐ ' + Number(m.rating).toFixed(1) + '</span>' : "";
+      var ageBadge = m.age ? '<span class="badge age">' + escapeHtml(m.age) + '</span>' : "";
+      var trailerLink = m.trailer ? '<a class="trailer-link" href="' + m.trailer + '" target="_blank" rel="noopener">▶ Trailer</a>' : "";
+
+      var voteControl;
+      if(d.closed || alreadyVoted){
+        voteControl = '<div class="vote-count">' + count + '<span class="unit">voto(s)</span></div>';
+      } else {
+        voteControl = '<button type="button" class="btn vote-btn" data-vote="' + m.id + '">Votar neste</button>';
+      }
+
+      return (
+        '<div class="vote-card' + (isWinner ? ' winner' : '') + '">' +
+          (isWinner ? '<span class="winner-tag">🏆 Vencedor</span>' : "") +
+          '<div class="vc-top">' +
+            (m.poster ? '<img src="' + m.poster + '" alt="">' : '') +
+            '<div>' +
+              '<div class="vc-title">' + escapeHtml(m.title) + '</div>' +
+              '<div class="badge-row" style="margin-top:6px;">' + ratingBadge + ageBadge + '</div>' +
+            '</div>' +
+          '</div>' +
+          trailerLink +
+          voteControl +
+        '</div>'
+      );
+    }).join("");
+
+    var actions = '<div class="draw-actions">';
+    if(!d.closed){
+      actions += '<button type="button" class="btn btn-secondary" id="closeVotingBtn">Encerrar votação</button>';
+    }
+    actions += '<button type="button" class="btn btn-secondary" id="newRoundBtn">Novo sorteio</button>';
+    actions += '</div>';
+
+    var helper = "";
+    if(!d.closed){
+      helper = alreadyVoted
+        ? '<p class="draw-note voted-tag">✓ Você já votou nesta rodada.</p>'
+        : '<p class="draw-note">Cada navegador pode votar em um filme desta rodada.</p>';
+    }
+
+    drawArea.innerHTML = '<div class="vote-grid">' + cards + '</div>' + helper + actions;
+
+    Array.prototype.forEach.call(drawArea.querySelectorAll("[data-vote]"), function(btn){
+      btn.addEventListener("click", function(){
+        castVote(Number(btn.getAttribute("data-vote")));
+      });
+    });
+    var closeBtn = document.getElementById("closeVotingBtn");
+    if(closeBtn) closeBtn.addEventListener("click", closeVoting);
+    document.getElementById("newRoundBtn").addEventListener("click", newRound);
+  }
+
+  // ---------- init + polling ----------
+
+  loadSuggestions();
+  loadDraw();
+
+  setInterval(function(){
+    loadSuggestions();
+    loadDraw();
+  }, POLL_MS);
+
+})();
+</script>
+
+</body>
+</html>
